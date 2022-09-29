@@ -283,12 +283,6 @@ def validate(val_loader, model, criterion, args, logger):
 
     # switch to evaluate mode
     model.eval()
-    
-    # 
-    prototype = torch.zeros((args.num_class, args.hidden_dim))
-    num_class = torch.zeros((args.num_class))
-    to_device = True
-
     saved_data = []
     with torch.no_grad():
         end = time.time()
@@ -296,29 +290,11 @@ def validate(val_loader, model, criterion, args, logger):
             images = images.cuda(non_blocking=True)
             target = target.cuda(non_blocking=True)
 
-            # to Device
-            if to_device == True:
-                prototype = prototype.to(images.device)
-                num_class = num_class.to(images.device)
-                to_device = False
-
             # compute output
             with torch.cuda.amp.autocast(enabled=args.amp):
-                output, features = model(images)
+                output = model(images)
                 loss = criterion(output, target)
-                output_sm = torch.sigmoid(output)
-
-            _tmp_output = output.clone().unsqueeze(-1)
-            _tmp_output[_tmp_output>0.8]=1
-            _tmp_output[_tmp_output<0.8]=0
-            features = _tmp_output * features
-    
-            target_nz = target.nonzero()
-            for label_info in target_nz:
-                batch_id, label = label_info
-                batch_id, label = int(batch_id), int(label)
-                prototype[label] += features.data[batch_id][label]
-                num_class[label] += 1
+                output_sm = nn.functional.sigmoid(output)
 
             # record loss
             losses.update(loss.item(), images.size(0))
@@ -334,9 +310,6 @@ def validate(val_loader, model, criterion, args, logger):
 
             if i % args.print_freq == 0 and dist.get_rank() == 0:
                 progress.display(i, logger)
-        
-        prototype = prototype / num_class[:, None]
-        np.save('./prototype/vis_prototype_embed_file_select_tresnetv1_448_nuswide_085.npy', prototype.cpu().detach().numpy())
 
         logger.info('=> synchronize...')
         if dist.get_world_size() > 1:
@@ -367,7 +340,7 @@ def validate(val_loader, model, criterion, args, logger):
         if dist.get_world_size() > 1:
             dist.barrier()
 
-    return loss_avg, mAP
+    return loss_avg, 
 
 
 ##################################################################################
