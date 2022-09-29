@@ -1,0 +1,644 @@
+[09/04 21:31:02.372]: Command: main_mlc.py -a Q2L-R101-576 --dataset_dir /media/mlldiskSSD/MLICdataset --backbone resnet101 --dataname coco14 --batch-size 64 --print-freq 400 --output ./output/ResNet_576_MSCOCO/bs64work2 --world-size 1 --rank 0 --dist-url tcp://127.0.0.1:3716 --gamma_pos 0 --gamma_neg 2 --dtgfl --loss_clip 0 --epochs 80 --lr 5e-5 --optim AdamW --pretrained --num_class 80 --img_size 576 --weight-decay 5e-3 --cutout --n_holes 1 --cut_fact 0.5 --length 224 --hidden_dim 2048 --dim_feedforward 8192 --enc_layers 1 --dec_layers 2 --nheads 4 --position_embedding v2 --early-stop --amp --ema-decay 0.9998 --gpus 0,1,2,3
+[09/04 21:31:02.373]: Full config saved to ./output/ResNet_576_MSCOCO/bs64work2/config.json
+[09/04 21:31:02.373]: world size: 4
+[09/04 21:31:02.373]: dist.get_rank(): 0
+[09/04 21:31:02.373]: local_rank: 0
+[09/04 21:31:02.373]: ==========================================
+[09/04 21:31:02.373]: ==========       CONFIG      =============
+[09/04 21:31:02.374]: ==========================================
+[09/04 21:31:02.374]: dataname: coco14
+[09/04 21:31:02.374]: dataset_dir: /media/mlldiskSSD/MLICdataset
+[09/04 21:31:02.374]: img_size: 576
+[09/04 21:31:02.374]: output: ./output/ResNet_576_MSCOCO/bs64work2
+[09/04 21:31:02.374]: num_class: 80
+[09/04 21:31:02.374]: pretrained: True
+[09/04 21:31:02.374]: frozen_backbone: False
+[09/04 21:31:02.374]: optim: AdamW
+[09/04 21:31:02.374]: arch: Q2L-R101-576
+[09/04 21:31:02.375]: eps: 1e-05
+[09/04 21:31:02.375]: dtgfl: True
+[09/04 21:31:02.375]: gamma_pos: 0.0
+[09/04 21:31:02.375]: gamma_neg: 2.0
+[09/04 21:31:02.375]: loss_dev: -1
+[09/04 21:31:02.375]: loss_clip: 0.0
+[09/04 21:31:02.375]: workers: 8
+[09/04 21:31:02.375]: epochs: 80
+[09/04 21:31:02.375]: val_interval: 1
+[09/04 21:31:02.375]: start_epoch: 0
+[09/04 21:31:02.375]: batch_size: 64
+[09/04 21:31:02.375]: lr: 5e-05
+[09/04 21:31:02.376]: lrp: 0.1
+[09/04 21:31:02.376]: weight_decay: 0.005
+[09/04 21:31:02.376]: print_freq: 400
+[09/04 21:31:02.376]: resume: 
+[09/04 21:31:02.376]: resume_omit: []
+[09/04 21:31:02.376]: evaluate: False
+[09/04 21:31:02.376]: ema_decay: 0.9998
+[09/04 21:31:02.376]: ema_epoch: 0
+[09/04 21:31:02.376]: world_size: 4
+[09/04 21:31:02.376]: rank: 0
+[09/04 21:31:02.376]: dist_url: tcp://127.0.0.1:3716
+[09/04 21:31:02.377]: seed: None
+[09/04 21:31:02.377]: local_rank: 0
+[09/04 21:31:02.377]: crop: False
+[09/04 21:31:02.377]: cutout: True
+[09/04 21:31:02.377]: n_holes: 1
+[09/04 21:31:02.377]: length: 224
+[09/04 21:31:02.377]: cut_fact: 0.5
+[09/04 21:31:02.377]: orid_norm: False
+[09/04 21:31:02.377]: remove_norm: False
+[09/04 21:31:02.377]: mix_up: False
+[09/04 21:31:02.377]: enc_layers: 1
+[09/04 21:31:02.378]: dec_layers: 2
+[09/04 21:31:02.378]: dim_feedforward: 8192
+[09/04 21:31:02.378]: hidden_dim: 2048
+[09/04 21:31:02.378]: dropout: 0.1
+[09/04 21:31:02.378]: nheads: 4
+[09/04 21:31:02.378]: pre_norm: False
+[09/04 21:31:02.378]: position_embedding: v2
+[09/04 21:31:02.378]: backbone: resnet101
+[09/04 21:31:02.378]: keep_other_self_attn_dec: False
+[09/04 21:31:02.378]: keep_first_self_attn_dec: False
+[09/04 21:31:02.378]: keep_input_proj: False
+[09/04 21:31:02.379]: amp: True
+[09/04 21:31:02.379]: early_stop: True
+[09/04 21:31:02.379]: kill_stop: False
+[09/04 21:31:02.379]: out_aps: False
+[09/04 21:31:02.379]: gpus: 0,1,2,3
+[09/04 21:31:02.379]: ==========================================
+[09/04 21:31:02.379]: ===========        END        ============
+[09/04 21:31:02.379]: ==========================================
+[09/04 21:31:02.379]: 
+
+[09/04 21:31:11.027]: number of params:193579088
+[09/04 21:31:11.029]: params:
+{
+  "module.backbone.0.body.layer2.0.conv1.weight": 32768,
+  "module.backbone.0.body.layer2.0.conv2.weight": 147456,
+  "module.backbone.0.body.layer2.0.conv3.weight": 65536,
+  "module.backbone.0.body.layer2.0.downsample.0.weight": 131072,
+  "module.backbone.0.body.layer2.1.conv1.weight": 65536,
+  "module.backbone.0.body.layer2.1.conv2.weight": 147456,
+  "module.backbone.0.body.layer2.1.conv3.weight": 65536,
+  "module.backbone.0.body.layer2.2.conv1.weight": 65536,
+  "module.backbone.0.body.layer2.2.conv2.weight": 147456,
+  "module.backbone.0.body.layer2.2.conv3.weight": 65536,
+  "module.backbone.0.body.layer2.3.conv1.weight": 65536,
+  "module.backbone.0.body.layer2.3.conv2.weight": 147456,
+  "module.backbone.0.body.layer2.3.conv3.weight": 65536,
+  "module.backbone.0.body.layer3.0.conv1.weight": 131072,
+  "module.backbone.0.body.layer3.0.conv2.weight": 589824,
+  "module.backbone.0.body.layer3.0.conv3.weight": 262144,
+  "module.backbone.0.body.layer3.0.downsample.0.weight": 524288,
+  "module.backbone.0.body.layer3.1.conv1.weight": 262144,
+  "module.backbone.0.body.layer3.1.conv2.weight": 589824,
+  "module.backbone.0.body.layer3.1.conv3.weight": 262144,
+  "module.backbone.0.body.layer3.2.conv1.weight": 262144,
+  "module.backbone.0.body.layer3.2.conv2.weight": 589824,
+  "module.backbone.0.body.layer3.2.conv3.weight": 262144,
+  "module.backbone.0.body.layer3.3.conv1.weight": 262144,
+  "module.backbone.0.body.layer3.3.conv2.weight": 589824,
+  "module.backbone.0.body.layer3.3.conv3.weight": 262144,
+  "module.backbone.0.body.layer3.4.conv1.weight": 262144,
+  "module.backbone.0.body.layer3.4.conv2.weight": 589824,
+  "module.backbone.0.body.layer3.4.conv3.weight": 262144,
+  "module.backbone.0.body.layer3.5.conv1.weight": 262144,
+  "module.backbone.0.body.layer3.5.conv2.weight": 589824,
+  "module.backbone.0.body.layer3.5.conv3.weight": 262144,
+  "module.backbone.0.body.layer3.6.conv1.weight": 262144,
+  "module.backbone.0.body.layer3.6.conv2.weight": 589824,
+  "module.backbone.0.body.layer3.6.conv3.weight": 262144,
+  "module.backbone.0.body.layer3.7.conv1.weight": 262144,
+  "module.backbone.0.body.layer3.7.conv2.weight": 589824,
+  "module.backbone.0.body.layer3.7.conv3.weight": 262144,
+  "module.backbone.0.body.layer3.8.conv1.weight": 262144,
+  "module.backbone.0.body.layer3.8.conv2.weight": 589824,
+  "module.backbone.0.body.layer3.8.conv3.weight": 262144,
+  "module.backbone.0.body.layer3.9.conv1.weight": 262144,
+  "module.backbone.0.body.layer3.9.conv2.weight": 589824,
+  "module.backbone.0.body.layer3.9.conv3.weight": 262144,
+  "module.backbone.0.body.layer3.10.conv1.weight": 262144,
+  "module.backbone.0.body.layer3.10.conv2.weight": 589824,
+  "module.backbone.0.body.layer3.10.conv3.weight": 262144,
+  "module.backbone.0.body.layer3.11.conv1.weight": 262144,
+  "module.backbone.0.body.layer3.11.conv2.weight": 589824,
+  "module.backbone.0.body.layer3.11.conv3.weight": 262144,
+  "module.backbone.0.body.layer3.12.conv1.weight": 262144,
+  "module.backbone.0.body.layer3.12.conv2.weight": 589824,
+  "module.backbone.0.body.layer3.12.conv3.weight": 262144,
+  "module.backbone.0.body.layer3.13.conv1.weight": 262144,
+  "module.backbone.0.body.layer3.13.conv2.weight": 589824,
+  "module.backbone.0.body.layer3.13.conv3.weight": 262144,
+  "module.backbone.0.body.layer3.14.conv1.weight": 262144,
+  "module.backbone.0.body.layer3.14.conv2.weight": 589824,
+  "module.backbone.0.body.layer3.14.conv3.weight": 262144,
+  "module.backbone.0.body.layer3.15.conv1.weight": 262144,
+  "module.backbone.0.body.layer3.15.conv2.weight": 589824,
+  "module.backbone.0.body.layer3.15.conv3.weight": 262144,
+  "module.backbone.0.body.layer3.16.conv1.weight": 262144,
+  "module.backbone.0.body.layer3.16.conv2.weight": 589824,
+  "module.backbone.0.body.layer3.16.conv3.weight": 262144,
+  "module.backbone.0.body.layer3.17.conv1.weight": 262144,
+  "module.backbone.0.body.layer3.17.conv2.weight": 589824,
+  "module.backbone.0.body.layer3.17.conv3.weight": 262144,
+  "module.backbone.0.body.layer3.18.conv1.weight": 262144,
+  "module.backbone.0.body.layer3.18.conv2.weight": 589824,
+  "module.backbone.0.body.layer3.18.conv3.weight": 262144,
+  "module.backbone.0.body.layer3.19.conv1.weight": 262144,
+  "module.backbone.0.body.layer3.19.conv2.weight": 589824,
+  "module.backbone.0.body.layer3.19.conv3.weight": 262144,
+  "module.backbone.0.body.layer3.20.conv1.weight": 262144,
+  "module.backbone.0.body.layer3.20.conv2.weight": 589824,
+  "module.backbone.0.body.layer3.20.conv3.weight": 262144,
+  "module.backbone.0.body.layer3.21.conv1.weight": 262144,
+  "module.backbone.0.body.layer3.21.conv2.weight": 589824,
+  "module.backbone.0.body.layer3.21.conv3.weight": 262144,
+  "module.backbone.0.body.layer3.22.conv1.weight": 262144,
+  "module.backbone.0.body.layer3.22.conv2.weight": 589824,
+  "module.backbone.0.body.layer3.22.conv3.weight": 262144,
+  "module.backbone.0.body.layer4.0.conv1.weight": 524288,
+  "module.backbone.0.body.layer4.0.conv2.weight": 2359296,
+  "module.backbone.0.body.layer4.0.conv3.weight": 1048576,
+  "module.backbone.0.body.layer4.0.downsample.0.weight": 2097152,
+  "module.backbone.0.body.layer4.1.conv1.weight": 1048576,
+  "module.backbone.0.body.layer4.1.conv2.weight": 2359296,
+  "module.backbone.0.body.layer4.1.conv3.weight": 1048576,
+  "module.backbone.0.body.layer4.2.conv1.weight": 1048576,
+  "module.backbone.0.body.layer4.2.conv2.weight": 2359296,
+  "module.backbone.0.body.layer4.2.conv3.weight": 1048576,
+  "module.transformer.encoder.layers.0.self_attn.in_proj_weight": 12582912,
+  "module.transformer.encoder.layers.0.self_attn.in_proj_bias": 6144,
+  "module.transformer.encoder.layers.0.self_attn.out_proj.weight": 4194304,
+  "module.transformer.encoder.layers.0.self_attn.out_proj.bias": 2048,
+  "module.transformer.encoder.layers.0.linear1.weight": 16777216,
+  "module.transformer.encoder.layers.0.linear1.bias": 8192,
+  "module.transformer.encoder.layers.0.linear2.weight": 16777216,
+  "module.transformer.encoder.layers.0.linear2.bias": 2048,
+  "module.transformer.encoder.layers.0.norm1.weight": 2048,
+  "module.transformer.encoder.layers.0.norm1.bias": 2048,
+  "module.transformer.encoder.layers.0.norm2.weight": 2048,
+  "module.transformer.encoder.layers.0.norm2.bias": 2048,
+  "module.transformer.decoder.layers.0.multihead_attn.in_proj_weight": 12582912,
+  "module.transformer.decoder.layers.0.multihead_attn.in_proj_bias": 6144,
+  "module.transformer.decoder.layers.0.multihead_attn.out_proj.weight": 4194304,
+  "module.transformer.decoder.layers.0.multihead_attn.out_proj.bias": 2048,
+  "module.transformer.decoder.layers.0.linear1.weight": 16777216,
+  "module.transformer.decoder.layers.0.linear1.bias": 8192,
+  "module.transformer.decoder.layers.0.linear2.weight": 16777216,
+  "module.transformer.decoder.layers.0.linear2.bias": 2048,
+  "module.transformer.decoder.layers.0.norm2.weight": 2048,
+  "module.transformer.decoder.layers.0.norm2.bias": 2048,
+  "module.transformer.decoder.layers.0.norm3.weight": 2048,
+  "module.transformer.decoder.layers.0.norm3.bias": 2048,
+  "module.transformer.decoder.layers.1.multihead_attn.in_proj_weight": 12582912,
+  "module.transformer.decoder.layers.1.multihead_attn.in_proj_bias": 6144,
+  "module.transformer.decoder.layers.1.multihead_attn.out_proj.weight": 4194304,
+  "module.transformer.decoder.layers.1.multihead_attn.out_proj.bias": 2048,
+  "module.transformer.decoder.layers.1.linear1.weight": 16777216,
+  "module.transformer.decoder.layers.1.linear1.bias": 8192,
+  "module.transformer.decoder.layers.1.linear2.weight": 16777216,
+  "module.transformer.decoder.layers.1.linear2.bias": 2048,
+  "module.transformer.decoder.layers.1.norm2.weight": 2048,
+  "module.transformer.decoder.layers.1.norm2.bias": 2048,
+  "module.transformer.decoder.layers.1.norm3.weight": 2048,
+  "module.transformer.decoder.layers.1.norm3.bias": 2048,
+  "module.transformer.decoder.norm.weight": 2048,
+  "module.transformer.decoder.norm.bias": 2048,
+  "module.query_embed.weight": 163840,
+  "module.fc.W": 163840,
+  "module.fc.b": 80
+}
+[09/04 21:31:11.029]: lr: 5e-05
+[09/04 21:31:29.101]: lr:2.000000000000001e-06
+[09/04 21:31:37.662]: Epoch: [0/80][   0/1293]  T 8.559 (8.559)  DT 2.065 (2.065)  S1 1.9 (1.9)  SA 7.5 (7.5)  LR 2.000e-06  Loss 267.880 (267.880)  Mem 13603
+[09/04 21:34:38.016]: Epoch: [0/80][ 400/1293]  T 0.437 (0.471)  DT 0.000 (0.005)  S1 36.6 (34.0)  SA 146.3 (135.9)  LR 2.044e-06  Loss 41.703 (57.992)  Mem 13603
+[09/04 21:37:37.465]: Epoch: [0/80][ 800/1293]  T 0.438 (0.460)  DT 0.000 (0.003)  S1 36.5 (34.8)  SA 146.1 (139.2)  LR 2.177e-06  Loss 39.517 (47.734)  Mem 13603
+[09/04 21:40:34.413]: Epoch: [0/80][1200/1293]  T 0.447 (0.454)  DT 0.000 (0.002)  S1 35.8 (35.2)  SA 143.2 (141.0)  LR 2.398e-06  Loss 29.837 (43.013)  Mem 13603
+[09/04 21:41:18.063]: Test: [  0/633]  Time 2.834 (2.834)  Loss 25.862 (25.862)  Mem 13603
+[09/04 21:42:16.124]: Test: [400/633]  Time 0.145 (0.152)  Loss 34.038 (29.061)  Mem 13603
+[09/04 21:42:50.246]: => synchronize...
+[09/04 21:43:17.484]:   mAP: 73.33639501386524
+[09/04 21:43:19.956]: Test: [  0/633]  Time 2.452 (2.452)  Loss 130.584 (130.584)  Mem 13603
+[09/04 21:44:17.782]: Test: [400/633]  Time 0.144 (0.150)  Loss 136.994 (133.277)  Mem 13603
+[09/04 21:44:51.595]: => synchronize...
+[09/04 21:45:19.539]:   mAP: 17.1220734896995
+[09/04 21:45:19.555]: => Test Epoch: [ 0/80]  ETA 18:13:37  TT 0:13:50 (0:13:50)  Loss 28.839  mAP 73.33640  Loss_ema 133.101  mAP_ema 17.12207
+[09/04 21:45:19.562]: 0 | Set best mAP 73.33639501386524 in ep 0
+[09/04 21:45:19.562]:    | best regular mAP 73.33639501386524 in ep 0
+[09/04 21:45:25.353]: lr:2.4611977119243223e-06
+[09/04 21:45:27.522]: Epoch: [1/80][   0/1293]  T 2.167 (2.167)  DT 1.703 (1.703)  S1 7.4 (7.4)  SA 29.5 (29.5)  LR 2.462e-06  Loss 28.470 (28.470)  Mem 13603
+[09/04 21:48:24.223]: Epoch: [1/80][ 400/1293]  T 0.428 (0.446)  DT 0.000 (0.005)  S1 37.4 (35.9)  SA 149.6 (143.5)  LR 2.790e-06  Loss 30.731 (30.913)  Mem 13603
+[09/04 21:51:20.781]: Epoch: [1/80][ 800/1293]  T 0.440 (0.444)  DT 0.000 (0.002)  S1 36.3 (36.1)  SA 145.4 (144.2)  LR 3.203e-06  Loss 21.061 (30.450)  Mem 13603
+[09/04 21:54:18.017]: Epoch: [1/80][1200/1293]  T 0.451 (0.444)  DT 0.000 (0.002)  S1 35.5 (36.1)  SA 142.0 (144.3)  LR 3.701e-06  Loss 32.687 (30.087)  Mem 13603
+[09/04 21:55:01.320]: Test: [  0/633]  Time 2.518 (2.518)  Loss 23.539 (23.539)  Mem 13603
+[09/04 21:55:59.836]: Test: [400/633]  Time 0.144 (0.152)  Loss 29.820 (25.610)  Mem 13603
+[09/04 21:56:33.708]: => synchronize...
+[09/04 21:57:00.921]:   mAP: 78.65524679912326
+[09/04 21:57:03.025]: Test: [  0/633]  Time 2.084 (2.084)  Loss 62.119 (62.119)  Mem 13603
+[09/04 21:58:01.279]: Test: [400/633]  Time 0.146 (0.150)  Loss 67.453 (64.405)  Mem 13603
+[09/04 21:58:35.132]: => synchronize...
+[09/04 21:59:02.545]:   mAP: 52.52969874703219
+[09/04 21:59:02.562]: => Test Epoch: [ 1/80]  ETA 17:54:50  TT 0:13:43 (0:27:33)  Loss 25.358  mAP 78.65525  Loss_ema 64.244  mAP_ema 52.52970
+[09/04 21:59:02.569]: 1 | Set best mAP 78.65524679912326 in ep 1
+[09/04 21:59:02.570]:    | best regular mAP 78.65524679912326 in ep 1
+[09/04 21:59:25.189]: lr:3.827065570240287e-06
+[09/04 21:59:27.222]: Epoch: [2/80][   0/1293]  T 2.030 (2.030)  DT 1.524 (1.524)  S1 7.9 (7.9)  SA 31.5 (31.5)  LR 3.828e-06  Loss 30.594 (30.594)  Mem 13603
+[09/04 22:02:23.044]: Epoch: [2/80][ 400/1293]  T 0.438 (0.444)  DT 0.000 (0.004)  S1 36.5 (36.1)  SA 146.0 (144.3)  LR 4.427e-06  Loss 32.153 (27.647)  Mem 13603
+[09/04 22:05:18.169]: Epoch: [2/80][ 800/1293]  T 0.425 (0.441)  DT 0.000 (0.002)  S1 37.6 (36.3)  SA 150.5 (145.2)  LR 5.105e-06  Loss 28.478 (27.404)  Mem 13603
+[09/04 22:08:13.465]: Epoch: [2/80][1200/1293]  T 0.445 (0.440)  DT 0.000 (0.002)  S1 36.0 (36.4)  SA 143.9 (145.5)  LR 5.861e-06  Loss 23.733 (27.148)  Mem 13603
+[09/04 22:08:56.939]: Test: [  0/633]  Time 3.061 (3.061)  Loss 22.117 (22.117)  Mem 13603
+[09/04 22:09:55.549]: Test: [400/633]  Time 0.147 (0.154)  Loss 25.868 (24.780)  Mem 13603
+[09/04 22:10:29.666]: => synchronize...
+[09/04 22:10:55.806]:   mAP: 81.09607980688716
+[09/04 22:10:58.615]: Test: [  0/633]  Time 2.790 (2.790)  Loss 36.585 (36.585)  Mem 13603
+[09/04 22:11:56.796]: Test: [400/633]  Time 0.145 (0.152)  Loss 41.875 (38.986)  Mem 13603
+[09/04 22:12:30.866]: => synchronize...
+[09/04 22:12:57.444]:   mAP: 68.77879681625562
+[09/04 22:12:57.460]: => Test Epoch: [ 2/80]  ETA 17:44:31  TT 0:13:54 (0:41:28)  Loss 24.674  mAP 81.09608  Loss_ema 38.829  mAP_ema 68.77880
+[09/04 22:12:57.466]: 2 | Set best mAP 81.09607980688716 in ep 2
+[09/04 22:12:57.466]:    | best regular mAP 81.09607980688716 in ep 2
+[09/04 22:13:19.207]: lr:6.045108980694017e-06
+[09/04 22:13:21.510]: Epoch: [3/80][   0/1293]  T 2.298 (2.298)  DT 1.772 (1.772)  S1 7.0 (7.0)  SA 27.9 (27.9)  LR 6.047e-06  Loss 26.525 (26.525)  Mem 13603
+[09/04 22:16:18.070]: Epoch: [3/80][ 400/1293]  T 0.442 (0.446)  DT 0.000 (0.005)  S1 36.2 (35.9)  SA 144.7 (143.5)  LR 6.894e-06  Loss 23.816 (25.961)  Mem 13603
+[09/04 22:19:14.203]: Epoch: [3/80][ 800/1293]  T 0.426 (0.443)  DT 0.000 (0.002)  S1 37.5 (36.1)  SA 150.2 (144.4)  LR 7.811e-06  Loss 16.364 (26.032)  Mem 13603
+[09/04 22:22:10.340]: Epoch: [3/80][1200/1293]  T 0.443 (0.442)  DT 0.000 (0.002)  S1 36.1 (36.2)  SA 144.4 (144.7)  LR 8.795e-06  Loss 36.692 (25.866)  Mem 13603
+[09/04 22:22:53.499]: Test: [  0/633]  Time 2.713 (2.713)  Loss 23.997 (23.997)  Mem 13603
+[09/04 22:23:51.658]: Test: [400/633]  Time 0.145 (0.152)  Loss 28.037 (24.333)  Mem 13603
+[09/04 22:24:25.677]: => synchronize...
+[09/04 22:24:55.058]:   mAP: 82.28752945433037
+[09/04 22:24:57.281]: Test: [  0/633]  Time 2.201 (2.201)  Loss 27.165 (27.165)  Mem 13603
+[09/04 22:25:55.550]: Test: [400/633]  Time 0.144 (0.151)  Loss 32.141 (29.451)  Mem 13603
+[09/04 22:26:29.309]: => synchronize...
+[09/04 22:26:56.939]:   mAP: 75.37818314604564
+[09/04 22:26:56.955]: => Test Epoch: [ 3/80]  ETA 17:33:51  TT 0:13:59 (0:55:27)  Loss 24.151  mAP 82.28753  Loss_ema 29.288  mAP_ema 75.37818
+[09/04 22:26:56.962]: 3 | Set best mAP 82.28752945433037 in ep 3
+[09/04 22:26:56.962]:    | best regular mAP 82.28752945433037 in ep 3
+[09/04 22:27:18.990]: lr:9.030081564464689e-06
+[09/04 22:27:21.008]: Epoch: [4/80][   0/1293]  T 2.016 (2.016)  DT 1.498 (1.498)  S1 7.9 (7.9)  SA 31.8 (31.8)  LR 9.033e-06  Loss 18.225 (18.225)  Mem 13603
+[09/04 22:30:16.509]: Epoch: [4/80][ 400/1293]  T 0.431 (0.443)  DT 0.000 (0.004)  S1 37.2 (36.1)  SA 148.6 (144.6)  LR 1.009e-05  Loss 24.422 (24.430)  Mem 13603
+[09/04 22:33:13.623]: Epoch: [4/80][ 800/1293]  T 0.446 (0.443)  DT 0.000 (0.002)  S1 35.9 (36.1)  SA 143.5 (144.6)  LR 1.121e-05  Loss 21.014 (24.486)  Mem 13603
+[09/04 22:36:07.523]: Epoch: [4/80][1200/1293]  T 0.426 (0.440)  DT 0.000 (0.002)  S1 37.6 (36.4)  SA 150.3 (145.4)  LR 1.239e-05  Loss 30.269 (24.560)  Mem 13603
+[09/04 22:36:50.361]: Test: [  0/633]  Time 2.702 (2.702)  Loss 22.004 (22.004)  Mem 13603
+[09/04 22:37:48.252]: Test: [400/633]  Time 0.144 (0.151)  Loss 28.649 (23.065)  Mem 13603
+[09/04 22:38:22.041]: => synchronize...
+[09/04 22:38:49.305]:   mAP: 83.01737325494703
+[09/04 22:38:51.596]: Test: [  0/633]  Time 2.273 (2.273)  Loss 23.304 (23.304)  Mem 13603
+[09/04 22:39:49.745]: Test: [400/633]  Time 0.145 (0.151)  Loss 27.785 (25.340)  Mem 13603
+[09/04 22:40:23.585]: => synchronize...
+[09/04 22:40:53.362]:   mAP: 79.08619715492416
+[09/04 22:40:53.379]: => Test Epoch: [ 4/80]  ETA 17:21:06  TT 0:13:56 (1:09:24)  Loss 22.891  mAP 83.01737  Loss_ema 25.176  mAP_ema 79.08620
+[09/04 22:40:53.386]: 4 | Set best mAP 83.01737325494703 in ep 4
+[09/04 22:40:53.386]:    | best regular mAP 83.01737325494703 in ep 4
+[09/04 22:41:15.658]: lr:1.2667261444402964e-05
+[09/04 22:41:17.749]: Epoch: [5/80][   0/1293]  T 2.089 (2.089)  DT 1.632 (1.632)  S1 7.7 (7.7)  SA 30.6 (30.6)  LR 1.267e-05  Loss 21.704 (21.704)  Mem 13603
+[09/04 22:44:15.794]: Epoch: [5/80][ 400/1293]  T 0.431 (0.449)  DT 0.000 (0.004)  S1 37.1 (35.6)  SA 148.4 (142.5)  LR 1.391e-05  Loss 12.318 (23.638)  Mem 13603
+[09/04 22:47:09.692]: Epoch: [5/80][ 800/1293]  T 0.441 (0.442)  DT 0.000 (0.002)  S1 36.3 (36.2)  SA 145.2 (144.8)  LR 1.519e-05  Loss 30.828 (23.713)  Mem 13603
+[09/04 22:50:03.604]: Epoch: [5/80][1200/1293]  T 0.445 (0.440)  DT 0.000 (0.002)  S1 36.0 (36.4)  SA 143.9 (145.6)  LR 1.651e-05  Loss 23.438 (23.808)  Mem 13603
+[09/04 22:50:46.165]: Test: [  0/633]  Time 2.412 (2.412)  Loss 22.020 (22.020)  Mem 13603
+[09/04 22:51:44.187]: Test: [400/633]  Time 0.144 (0.151)  Loss 27.245 (24.223)  Mem 13603
+[09/04 22:52:17.988]: => synchronize...
+[09/04 22:52:45.957]:   mAP: 83.5678930699255
+[09/04 22:52:48.387]: Test: [  0/633]  Time 2.412 (2.412)  Loss 21.407 (21.407)  Mem 13603
+[09/04 22:53:46.448]: Test: [400/633]  Time 0.144 (0.151)  Loss 25.690 (23.428)  Mem 13603
+[09/04 22:54:20.222]: => synchronize...
+[09/04 22:54:47.782]:   mAP: 81.4812276811144
+[09/04 22:54:47.798]: => Test Epoch: [ 5/80]  ETA 17:07:32  TT 0:13:54 (1:23:18)  Loss 24.060  mAP 83.56789  Loss_ema 23.259  mAP_ema 81.48123
+[09/04 22:54:47.804]: 5 | Set best mAP 83.5678930699255 in ep 5
+[09/04 22:54:47.804]:    | best regular mAP 83.5678930699255 in ep 5
+[09/04 22:55:10.846]: lr:1.68168603673018e-05
+[09/04 22:55:12.928]: Epoch: [6/80][   0/1293]  T 2.080 (2.080)  DT 1.575 (1.575)  S1 7.7 (7.7)  SA 30.8 (30.8)  LR 1.682e-05  Loss 19.914 (19.914)  Mem 13603
+[09/04 22:58:08.109]: Epoch: [6/80][ 400/1293]  T 0.443 (0.442)  DT 0.000 (0.004)  S1 36.2 (36.2)  SA 144.6 (144.8)  LR 1.818e-05  Loss 20.049 (23.178)  Mem 13603
+[09/04 23:01:01.943]: Epoch: [6/80][ 800/1293]  T 0.433 (0.438)  DT 0.000 (0.002)  S1 36.9 (36.5)  SA 147.7 (146.0)  LR 1.958e-05  Loss 20.469 (23.462)  Mem 13603
+[09/04 23:03:56.379]: Epoch: [6/80][1200/1293]  T 0.437 (0.438)  DT 0.000 (0.002)  S1 36.6 (36.6)  SA 146.5 (146.3)  LR 2.099e-05  Loss 19.066 (23.498)  Mem 13603
+[09/04 23:04:39.332]: Test: [  0/633]  Time 2.585 (2.585)  Loss 27.085 (27.085)  Mem 13603
+[09/04 23:05:37.967]: Test: [400/633]  Time 0.145 (0.153)  Loss 27.985 (24.461)  Mem 13603
+[09/04 23:06:12.201]: => synchronize...
+[09/04 23:06:38.780]:   mAP: 83.921191190869
+[09/04 23:06:41.493]: Test: [  0/633]  Time 2.695 (2.695)  Loss 20.621 (20.621)  Mem 13603
+[09/04 23:07:39.565]: Test: [400/633]  Time 0.144 (0.152)  Loss 24.717 (22.568)  Mem 13603
+[09/04 23:08:13.593]: => synchronize...
+[09/04 23:08:40.372]:   mAP: 83.11834717327119
+[09/04 23:08:40.383]: => Test Epoch: [ 6/80]  ETA 16:53:33  TT 0:13:52 (1:37:11)  Loss 24.327  mAP 83.92119  Loss_ema 22.396  mAP_ema 83.11835
+[09/04 23:08:40.390]: 6 | Set best mAP 83.921191190869 in ep 6
+[09/04 23:08:40.390]:    | best regular mAP 83.921191190869 in ep 6
+[09/04 23:09:02.473]: lr:2.1319396205774126e-05
+[09/04 23:09:04.799]: Epoch: [7/80][   0/1293]  T 2.323 (2.323)  DT 1.830 (1.830)  S1 6.9 (6.9)  SA 27.5 (27.5)  LR 2.132e-05  Loss 31.403 (31.403)  Mem 13603
+[09/04 23:11:59.722]: Epoch: [7/80][ 400/1293]  T 0.442 (0.442)  DT 0.000 (0.005)  S1 36.2 (36.2)  SA 144.8 (144.8)  LR 2.276e-05  Loss 29.660 (22.683)  Mem 13603
+[09/04 23:14:54.223]: Epoch: [7/80][ 800/1293]  T 0.442 (0.439)  DT 0.000 (0.003)  S1 36.2 (36.4)  SA 144.8 (145.7)  LR 2.421e-05  Loss 15.883 (22.937)  Mem 13603
+[09/04 23:17:48.576]: Epoch: [7/80][1200/1293]  T 0.434 (0.438)  DT 0.000 (0.002)  S1 36.8 (36.5)  SA 147.3 (146.1)  LR 2.567e-05  Loss 26.939 (23.147)  Mem 13603
+[09/04 23:18:31.282]: Test: [  0/633]  Time 2.469 (2.469)  Loss 19.143 (19.143)  Mem 13603
+[09/04 23:19:29.339]: Test: [400/633]  Time 0.145 (0.151)  Loss 24.855 (22.979)  Mem 13603
+[09/04 23:20:03.203]: => synchronize...
+[09/04 23:20:30.766]:   mAP: 83.64734378290923
+[09/04 23:20:33.824]: Test: [  0/633]  Time 3.039 (3.039)  Loss 20.406 (20.406)  Mem 13603
+[09/04 23:21:31.826]: Test: [400/633]  Time 0.144 (0.152)  Loss 24.377 (22.311)  Mem 13603
+[09/04 23:22:05.815]: => synchronize...
+[09/04 23:22:32.251]:   mAP: 84.24966762603016
+[09/04 23:22:32.268]: => Test Epoch: [ 7/80]  ETA 16:39:29  TT 0:13:51 (1:51:03)  Loss 22.900  mAP 83.64734  Loss_ema 22.157  mAP_ema 84.24967
+[09/04 23:22:32.274]: 7 | Set best mAP 84.24966762603016 in ep 7
+[09/04 23:22:32.274]:    | best regular mAP 83.921191190869 in ep 6
+[09/04 23:22:53.690]: lr:2.600182235760656e-05
+[09/04 23:22:55.859]: Epoch: [8/80][   0/1293]  T 2.166 (2.166)  DT 1.680 (1.680)  S1 7.4 (7.4)  SA 29.6 (29.6)  LR 2.601e-05  Loss 31.833 (31.833)  Mem 13603
+[09/04 23:25:51.831]: Epoch: [8/80][ 400/1293]  T 0.432 (0.444)  DT 0.000 (0.004)  S1 37.0 (36.0)  SA 148.0 (144.1)  LR 2.746e-05  Loss 20.600 (22.368)  Mem 13603
+[09/04 23:28:51.873]: Epoch: [8/80][ 800/1293]  T 0.441 (0.447)  DT 0.000 (0.002)  S1 36.3 (35.8)  SA 145.3 (143.1)  LR 2.891e-05  Loss 19.030 (22.503)  Mem 13603
+[09/04 23:31:47.288]: Epoch: [8/80][1200/1293]  T 0.441 (0.444)  DT 0.000 (0.002)  S1 36.2 (36.0)  SA 145.0 (144.1)  LR 3.035e-05  Loss 24.294 (22.618)  Mem 13603
+[09/04 23:32:30.828]: Test: [  0/633]  Time 2.939 (2.939)  Loss 21.252 (21.252)  Mem 13603
+[09/04 23:33:29.040]: Test: [400/633]  Time 0.144 (0.152)  Loss 24.301 (23.522)  Mem 13603
+[09/04 23:34:03.148]: => synchronize...
+[09/04 23:34:30.597]:   mAP: 83.78979111924545
+[09/04 23:34:33.158]: Test: [  0/633]  Time 2.539 (2.539)  Loss 20.344 (20.344)  Mem 13603
+[09/04 23:35:31.080]: Test: [400/633]  Time 0.144 (0.151)  Loss 23.869 (22.246)  Mem 13603
+[09/04 23:36:04.848]: => synchronize...
+[09/04 23:36:32.591]:   mAP: 85.07434873803207
+[09/04 23:36:32.602]: => Test Epoch: [ 8/80]  ETA 16:26:35  TT 0:14:00 (2:05:03)  Loss 23.416  mAP 83.78979  Loss_ema 22.112  mAP_ema 85.07435
+[09/04 23:36:32.608]: 8 | Set best mAP 85.07434873803207 in ep 8
+[09/04 23:36:32.608]:    | best regular mAP 83.921191190869 in ep 6
+[09/04 23:36:53.128]: lr:3.068417847050912e-05
+[09/04 23:36:55.338]: Epoch: [9/80][   0/1293]  T 2.203 (2.203)  DT 1.749 (1.749)  S1 7.3 (7.3)  SA 29.0 (29.0)  LR 3.069e-05  Loss 21.512 (21.512)  Mem 13603
+[09/04 23:39:50.834]: Epoch: [9/80][ 400/1293]  T 0.429 (0.443)  DT 0.000 (0.005)  S1 37.3 (36.1)  SA 149.1 (144.4)  LR 3.211e-05  Loss 28.576 (21.876)  Mem 13603
+[09/04 23:42:44.516]: Epoch: [9/80][ 800/1293]  T 0.434 (0.439)  DT 0.000 (0.002)  S1 36.9 (36.5)  SA 147.5 (145.9)  LR 3.351e-05  Loss 27.658 (22.334)  Mem 13603
+[09/04 23:45:38.340]: Epoch: [9/80][1200/1293]  T 0.432 (0.437)  DT 0.000 (0.002)  S1 37.0 (36.6)  SA 148.2 (146.4)  LR 3.488e-05  Loss 20.511 (22.534)  Mem 13603
+[09/04 23:46:21.135]: Test: [  0/633]  Time 2.713 (2.713)  Loss 23.284 (23.284)  Mem 13603
+[09/04 23:47:19.241]: Test: [400/633]  Time 0.144 (0.152)  Loss 23.669 (22.590)  Mem 13603
+[09/04 23:47:53.136]: => synchronize...
+[09/04 23:48:20.385]:   mAP: 83.80805818001991
+[09/04 23:48:22.965]: Test: [  0/633]  Time 2.561 (2.561)  Loss 20.304 (20.304)  Mem 13603
+[09/04 23:49:20.677]: Test: [400/633]  Time 0.144 (0.150)  Loss 23.432 (22.375)  Mem 13603
+[09/04 23:49:54.465]: => synchronize...
+[09/04 23:50:21.945]:   mAP: 85.66101513252633
+[09/04 23:50:21.961]: => Test Epoch: [ 9/80]  ETA 16:12:11  TT 0:13:49 (2:18:53)  Loss 22.319  mAP 83.80806  Loss_ema 22.257  mAP_ema 85.66102
+[09/04 23:50:21.967]: 9 | Set best mAP 85.66101513252633 in ep 9
+[09/04 23:50:21.967]:    | best regular mAP 83.921191190869 in ep 6
+[09/04 23:50:43.733]: lr:3.518650688400802e-05
+[09/04 23:50:45.858]: Epoch: [10/80][   0/1293]  T 2.122 (2.122)  DT 1.598 (1.598)  S1 7.5 (7.5)  SA 30.2 (30.2)  LR 3.519e-05  Loss 26.579 (26.579)  Mem 13603
+[09/04 23:53:38.848]: Epoch: [10/80][ 400/1293]  T 0.428 (0.437)  DT 0.000 (0.004)  S1 37.3 (36.6)  SA 149.4 (146.6)  LR 3.652e-05  Loss 16.504 (21.054)  Mem 13603
+[09/04 23:56:31.748]: Epoch: [10/80][ 800/1293]  T 0.458 (0.434)  DT 0.000 (0.002)  S1 35.0 (36.8)  SA 139.8 (147.3)  LR 3.781e-05  Loss 16.942 (21.480)  Mem 13603
+[09/04 23:59:25.816]: Epoch: [10/80][1200/1293]  T 0.440 (0.435)  DT 0.000 (0.002)  S1 36.3 (36.8)  SA 145.4 (147.2)  LR 3.906e-05  Loss 21.894 (21.824)  Mem 13603
+[09/05 00:00:07.942]: Test: [  0/633]  Time 2.080 (2.080)  Loss 19.479 (19.479)  Mem 13603
+[09/05 00:01:07.025]: Test: [400/633]  Time 0.144 (0.153)  Loss 25.095 (22.854)  Mem 13603
+[09/05 00:01:41.207]: => synchronize...
+[09/05 00:02:08.408]:   mAP: 83.88902549177438
+[09/05 00:02:11.244]: Test: [  0/633]  Time 2.817 (2.817)  Loss 20.084 (20.084)  Mem 13603
+[09/05 00:03:09.613]: Test: [400/633]  Time 0.147 (0.153)  Loss 23.234 (22.569)  Mem 13603
+[09/05 00:03:43.647]: => synchronize...
+[09/05 00:04:11.575]:   mAP: 86.06968746354
+[09/05 00:04:11.591]: => Test Epoch: [10/80]  ETA 15:57:54  TT 0:13:49 (2:32:42)  Loss 22.748  mAP 83.88903  Loss_ema 22.465  mAP_ema 86.06969
+[09/05 00:04:11.597]: 10 | Set best mAP 86.06968746354 in ep 10
+[09/05 00:04:11.597]:    | best regular mAP 83.921191190869 in ep 6
+[09/05 00:04:37.614]: lr:3.9335768967883464e-05
+[09/05 00:04:39.737]: Epoch: [11/80][   0/1293]  T 2.121 (2.121)  DT 1.615 (1.615)  S1 7.5 (7.5)  SA 30.2 (30.2)  LR 3.934e-05  Loss 21.553 (21.553)  Mem 13603
+[09/05 00:07:36.035]: Epoch: [11/80][ 400/1293]  T 0.450 (0.445)  DT 0.000 (0.004)  S1 35.5 (36.0)  SA 142.1 (143.8)  LR 4.053e-05  Loss 16.074 (21.130)  Mem 13603
+[09/05 00:10:31.425]: Epoch: [11/80][ 800/1293]  T 0.443 (0.442)  DT 0.000 (0.002)  S1 36.1 (36.2)  SA 144.4 (144.9)  LR 4.166e-05  Loss 15.298 (21.327)  Mem 13603
+[09/05 00:13:26.373]: Epoch: [11/80][1200/1293]  T 0.462 (0.440)  DT 0.000 (0.002)  S1 34.6 (36.3)  SA 138.4 (145.4)  LR 4.273e-05  Loss 17.831 (21.524)  Mem 13603
+[09/05 00:14:09.561]: Test: [  0/633]  Time 3.022 (3.022)  Loss 21.765 (21.765)  Mem 13603
+[09/05 00:15:07.911]: Test: [400/633]  Time 0.145 (0.153)  Loss 26.628 (21.993)  Mem 13603
+[09/05 00:15:41.994]: => synchronize...
+[09/05 00:16:09.342]:   mAP: 83.52886498783192
+[09/05 00:16:11.909]: Test: [  0/633]  Time 2.546 (2.546)  Loss 20.160 (20.160)  Mem 13603
+[09/05 00:17:10.302]: Test: [400/633]  Time 0.144 (0.152)  Loss 23.013 (22.730)  Mem 13603
+[09/05 00:17:44.385]: => synchronize...
+[09/05 00:18:12.101]:   mAP: 86.335194587645
+[09/05 00:18:12.117]: => Test Epoch: [11/80]  ETA 15:44:44  TT 0:14:00 (2:46:43)  Loss 21.873  mAP 83.52886  Loss_ema 22.657  mAP_ema 86.33519
+[09/05 00:18:12.124]: 11 | Set best mAP 86.335194587645 in ep 11
+[09/05 00:18:12.124]:    | best regular mAP 83.921191190869 in ep 6
+[09/05 00:18:36.819]: lr:4.297249554053062e-05
+[09/05 00:18:39.133]: Epoch: [12/80][   0/1293]  T 2.308 (2.308)  DT 1.817 (1.817)  S1 6.9 (6.9)  SA 27.7 (27.7)  LR 4.298e-05  Loss 12.386 (12.386)  Mem 13603
+[09/05 00:21:35.389]: Epoch: [12/80][ 400/1293]  T 0.430 (0.445)  DT 0.000 (0.005)  S1 37.2 (35.9)  SA 148.8 (143.7)  LR 4.397e-05  Loss 17.156 (20.747)  Mem 13603
+[09/05 00:24:30.484]: Epoch: [12/80][ 800/1293]  T 0.432 (0.442)  DT 0.000 (0.003)  S1 37.0 (36.2)  SA 148.0 (145.0)  LR 4.491e-05  Loss 15.194 (20.978)  Mem 13603
+[09/05 00:27:28.653]: Epoch: [12/80][1200/1293]  T 0.438 (0.443)  DT 0.000 (0.002)  S1 36.6 (36.1)  SA 146.2 (144.5)  LR 4.577e-05  Loss 25.890 (21.000)  Mem 13603
+[09/05 00:28:10.999]: Test: [  0/633]  Time 2.356 (2.356)  Loss 20.198 (20.198)  Mem 13603
+[09/05 00:29:09.983]: Test: [400/633]  Time 0.144 (0.153)  Loss 24.778 (22.779)  Mem 13603
+[09/05 00:29:44.175]: => synchronize...
+[09/05 00:30:11.322]:   mAP: 83.40944886949892
+[09/05 00:30:14.281]: Test: [  0/633]  Time 2.940 (2.940)  Loss 19.678 (19.678)  Mem 13603
+[09/05 00:31:12.498]: Test: [400/633]  Time 0.144 (0.153)  Loss 23.383 (23.040)  Mem 13603
+[09/05 00:31:46.487]: => synchronize...
+[09/05 00:32:13.851]:   mAP: 86.51162817996587
+[09/05 00:32:13.867]: => Test Epoch: [12/80]  ETA 15:31:33  TT 0:14:01 (3:00:44)  Loss 22.618  mAP 83.40945  Loss_ema 22.977  mAP_ema 86.51163
+[09/05 00:32:13.872]: 12 | Set best mAP 86.51162817996587 in ep 12
+[09/05 00:32:13.872]:    | best regular mAP 83.921191190869 in ep 6
+[09/05 00:32:38.162]: lr:4.595691577076623e-05
+[09/05 00:32:40.344]: Epoch: [13/80][   0/1293]  T 2.180 (2.180)  DT 1.675 (1.675)  S1 7.3 (7.3)  SA 29.4 (29.4)  LR 4.596e-05  Loss 23.966 (23.966)  Mem 13603
+[09/05 00:35:42.501]: Epoch: [13/80][ 400/1293]  T 0.442 (0.460)  DT 0.000 (0.004)  S1 36.2 (34.8)  SA 144.7 (139.2)  LR 4.673e-05  Loss 13.931 (20.345)  Mem 13603
+[09/05 00:38:38.395]: Epoch: [13/80][ 800/1293]  T 0.461 (0.450)  DT 0.000 (0.002)  S1 34.7 (35.6)  SA 138.9 (142.3)  LR 4.743e-05  Loss 24.259 (20.434)  Mem 13603
+[09/05 00:41:36.627]: Epoch: [13/80][1200/1293]  T 0.442 (0.448)  DT 0.000 (0.002)  S1 36.2 (35.7)  SA 144.9 (142.7)  LR 4.804e-05  Loss 32.184 (20.667)  Mem 13603
+[09/05 00:42:20.406]: Test: [  0/633]  Time 2.533 (2.533)  Loss 26.684 (26.684)  Mem 13603
+[09/05 00:43:18.596]: Test: [400/633]  Time 0.152 (0.151)  Loss 25.861 (22.811)  Mem 13603
+[09/05 00:43:52.656]: => synchronize...
+[09/05 00:44:20.985]:   mAP: 83.70863255381104
+[09/05 00:44:23.454]: Test: [  0/633]  Time 2.450 (2.450)  Loss 19.609 (19.609)  Mem 13603
+[09/05 00:45:21.534]: Test: [400/633]  Time 0.144 (0.151)  Loss 24.169 (23.406)  Mem 13603
+[09/05 00:45:55.315]: => synchronize...
+[09/05 00:46:22.834]:   mAP: 86.60471860925848
+[09/05 00:46:22.851]: => Test Epoch: [13/80]  ETA 15:18:48  TT 0:14:08 (3:14:53)  Loss 22.650  mAP 83.70863  Loss_ema 23.344  mAP_ema 86.60472
+[09/05 00:46:22.858]: 13 | Set best mAP 86.60471860925848 in ep 13
+[09/05 00:46:22.858]:    | best regular mAP 83.921191190869 in ep 6
+[09/05 00:46:43.858]: lr:4.817432901012319e-05
+[09/05 00:46:46.110]: Epoch: [14/80][   0/1293]  T 2.249 (2.249)  DT 1.788 (1.788)  S1 7.1 (7.1)  SA 28.5 (28.5)  LR 4.818e-05  Loss 23.464 (23.464)  Mem 13603
+[09/05 00:49:40.254]: Epoch: [14/80][ 400/1293]  T 0.446 (0.440)  DT 0.000 (0.005)  S1 35.9 (36.4)  SA 143.4 (145.5)  LR 4.869e-05  Loss 19.262 (19.788)  Mem 13603
+[09/05 00:52:33.647]: Epoch: [14/80][ 800/1293]  T 0.443 (0.437)  DT 0.000 (0.003)  S1 36.1 (36.6)  SA 144.5 (146.6)  LR 4.912e-05  Loss 15.839 (19.916)  Mem 13603
+[09/05 00:55:27.183]: Epoch: [14/80][1200/1293]  T 0.429 (0.436)  DT 0.000 (0.002)  S1 37.3 (36.7)  SA 149.2 (146.9)  LR 4.947e-05  Loss 21.374 (20.035)  Mem 13603
+[09/05 00:56:09.637]: Test: [  0/633]  Time 2.426 (2.426)  Loss 20.459 (20.459)  Mem 13603
+[09/05 00:57:07.578]: Test: [400/633]  Time 0.145 (0.151)  Loss 28.884 (22.955)  Mem 13603
+[09/05 00:57:41.323]: => synchronize...
+[09/05 00:58:09.194]:   mAP: 83.44552738119616
+[09/05 00:58:11.617]: Test: [  0/633]  Time 2.404 (2.404)  Loss 19.852 (19.852)  Mem 13603
+[09/05 00:59:09.357]: Test: [400/633]  Time 0.144 (0.150)  Loss 25.084 (23.868)  Mem 13603
+[09/05 00:59:43.069]: => synchronize...
+[09/05 01:00:11.016]:   mAP: 86.66203749847924
+[09/05 01:00:11.033]: => Test Epoch: [14/80]  ETA 15:04:22  TT 0:13:48 (3:28:42)  Loss 22.784  mAP 83.44553  Loss_ema 23.798  mAP_ema 86.66204
+[09/05 01:00:11.039]: 14 | Set best mAP 86.66203749847924 in ep 14
+[09/05 01:00:11.040]:    | best regular mAP 83.921191190869 in ep 6
+[09/05 01:00:31.102]: lr:4.953951309923632e-05
+[09/05 01:00:33.163]: Epoch: [15/80][   0/1293]  T 2.059 (2.059)  DT 1.547 (1.547)  S1 7.8 (7.8)  SA 31.1 (31.1)  LR 4.954e-05  Loss 23.698 (23.698)  Mem 13603
+[09/05 01:03:27.172]: Epoch: [15/80][ 400/1293]  T 0.426 (0.439)  DT 0.000 (0.004)  S1 37.6 (36.4)  SA 150.3 (145.8)  LR 4.978e-05  Loss 14.537 (19.058)  Mem 13603
+[09/05 01:06:20.877]: Epoch: [15/80][ 800/1293]  T 0.424 (0.437)  DT 0.000 (0.002)  S1 37.8 (36.6)  SA 151.1 (146.6)  LR 4.993e-05  Loss 18.766 (19.386)  Mem 13603
+[09/05 01:09:14.555]: Epoch: [15/80][1200/1293]  T 0.438 (0.436)  DT 0.000 (0.002)  S1 36.5 (36.7)  SA 146.1 (146.8)  LR 5.000e-05  Loss 18.987 (19.688)  Mem 13603
+[09/05 01:09:57.266]: Test: [  0/633]  Time 2.652 (2.652)  Loss 15.203 (15.203)  Mem 13603
+[09/05 01:10:55.185]: Test: [400/633]  Time 0.144 (0.151)  Loss 25.819 (22.017)  Mem 13603
+[09/05 01:11:28.981]: => synchronize...
+[09/05 01:11:56.518]:   mAP: 83.54125887909298
+[09/05 01:11:58.922]: Test: [  0/633]  Time 2.385 (2.385)  Loss 20.591 (20.591)  Mem 13603
+[09/05 01:12:56.566]: Test: [400/633]  Time 0.144 (0.150)  Loss 25.304 (24.175)  Mem 13603
+[09/05 01:13:30.290]: => synchronize...
+[09/05 01:13:58.241]:   mAP: 86.71712353829125
+[09/05 01:13:58.257]: => Test Epoch: [15/80]  ETA 14:49:57  TT 0:13:47 (3:42:29)  Loss 21.959  mAP 83.54126  Loss_ema 24.132  mAP_ema 86.71712
+[09/05 01:13:58.263]: 15 | Set best mAP 86.71712353829125 in ep 15
+[09/05 01:13:58.263]:    | best regular mAP 83.921191190869 in ep 6
+[09/05 01:14:17.930]: lr:4.999999998198431e-05
+[09/05 01:14:19.982]: Epoch: [16/80][   0/1293]  T 2.049 (2.049)  DT 1.528 (1.528)  S1 7.8 (7.8)  SA 31.2 (31.2)  LR 5.000e-05  Loss 13.755 (13.755)  Mem 13603
+[09/05 01:17:14.096]: Epoch: [16/80][ 400/1293]  T 0.436 (0.439)  DT 0.000 (0.004)  S1 36.7 (36.4)  SA 146.9 (145.7)  LR 5.000e-05  Loss 16.092 (18.470)  Mem 13603
+[09/05 01:20:07.226]: Epoch: [16/80][ 800/1293]  T 0.427 (0.436)  DT 0.000 (0.002)  S1 37.5 (36.7)  SA 150.0 (146.8)  LR 4.999e-05  Loss 18.792 (18.894)  Mem 13603
+[09/05 01:23:04.266]: Epoch: [16/80][1200/1293]  T 0.437 (0.438)  DT 0.000 (0.002)  S1 36.6 (36.5)  SA 146.5 (146.0)  LR 4.997e-05  Loss 20.443 (18.923)  Mem 13603
+[09/05 01:23:46.512]: Test: [  0/633]  Time 2.235 (2.235)  Loss 23.440 (23.440)  Mem 13603
+[09/05 01:24:44.803]: Test: [400/633]  Time 0.144 (0.151)  Loss 25.381 (22.407)  Mem 13603
+[09/05 01:25:18.686]: => synchronize...
+[09/05 01:25:46.192]:   mAP: 83.43882977079139
+[09/05 01:25:48.790]: Test: [  0/633]  Time 2.585 (2.585)  Loss 22.869 (22.869)  Mem 13603
+[09/05 01:26:46.634]: Test: [400/633]  Time 0.144 (0.151)  Loss 24.879 (24.477)  Mem 13603
+[09/05 01:27:20.511]: => synchronize...
+[09/05 01:27:47.727]:   mAP: 86.74710547814603
+[09/05 01:27:47.744]: => Test Epoch: [16/80]  ETA 14:35:44  TT 0:13:49 (3:56:18)  Loss 22.185  mAP 83.43883  Loss_ema 24.434  mAP_ema 86.74711
+[09/05 01:27:47.750]: 16 | Set best mAP 86.74710547814603 in ep 16
+[09/05 01:27:47.750]:    | best regular mAP 83.921191190869 in ep 6
+[09/05 01:28:09.767]: lr:4.9969839937709644e-05
+[09/05 01:28:11.840]: Epoch: [17/80][   0/1293]  T 2.071 (2.071)  DT 1.584 (1.584)  S1 7.7 (7.7)  SA 30.9 (30.9)  LR 4.997e-05  Loss 26.152 (26.152)  Mem 13603
+[09/05 01:31:06.636]: Epoch: [17/80][ 400/1293]  T 0.434 (0.441)  DT 0.000 (0.004)  S1 36.9 (36.3)  SA 147.6 (145.1)  LR 4.995e-05  Loss 22.473 (18.079)  Mem 13603
+[09/05 01:34:00.519]: Epoch: [17/80][ 800/1293]  T 0.434 (0.438)  DT 0.000 (0.002)  S1 36.8 (36.5)  SA 147.3 (146.2)  LR 4.992e-05  Loss 25.408 (18.301)  Mem 13603
+[09/05 01:37:00.545]: Epoch: [17/80][1200/1293]  T 0.433 (0.442)  DT 0.000 (0.002)  S1 37.0 (36.2)  SA 147.9 (144.8)  LR 4.989e-05  Loss 18.321 (18.360)  Mem 13603
+[09/05 01:37:43.178]: Test: [  0/633]  Time 2.613 (2.613)  Loss 21.413 (21.413)  Mem 13603
+[09/05 01:38:41.971]: Test: [400/633]  Time 0.145 (0.153)  Loss 25.609 (23.878)  Mem 13603
+[09/05 01:39:16.047]: => synchronize...
+[09/05 01:39:42.733]:   mAP: 83.55128467381435
+[09/05 01:39:45.964]: Test: [  0/633]  Time 3.212 (3.212)  Loss 24.398 (24.398)  Mem 13603
+[09/05 01:40:44.408]: Test: [400/633]  Time 0.144 (0.154)  Loss 24.976 (24.790)  Mem 13603
+[09/05 01:41:18.569]: => synchronize...
+[09/05 01:41:45.397]:   mAP: 86.76594779216546
+[09/05 01:41:45.414]: => Test Epoch: [17/80]  ETA 14:22:03  TT 0:13:57 (4:10:16)  Loss 23.440  mAP 83.55128  Loss_ema 24.724  mAP_ema 86.76595
+[09/05 01:41:45.426]: 17 | Set best mAP 86.76594779216546 in ep 17
+[09/05 01:41:45.426]:    | best regular mAP 83.921191190869 in ep 6
+[09/05 01:42:06.897]: lr:4.987952560283413e-05
+[09/05 01:42:09.070]: Epoch: [18/80][   0/1293]  T 2.170 (2.170)  DT 1.698 (1.698)  S1 7.4 (7.4)  SA 29.5 (29.5)  LR 4.988e-05  Loss 17.423 (17.423)  Mem 13603
+[09/05 01:45:02.732]: Epoch: [18/80][ 400/1293]  T 0.431 (0.438)  DT 0.000 (0.005)  S1 37.1 (36.5)  SA 148.4 (146.0)  LR 4.984e-05  Loss 20.583 (17.622)  Mem 13603
+[09/05 01:47:56.375]: Epoch: [18/80][ 800/1293]  T 0.425 (0.436)  DT 0.000 (0.002)  S1 37.7 (36.7)  SA 150.7 (146.7)  LR 4.979e-05  Loss 12.524 (17.655)  Mem 13603
+[09/05 01:50:49.393]: Epoch: [18/80][1200/1293]  T 0.430 (0.435)  DT 0.000 (0.002)  S1 37.2 (36.8)  SA 149.0 (147.1)  LR 4.974e-05  Loss 18.220 (17.759)  Mem 13603
+[09/05 01:51:32.071]: Test: [  0/633]  Time 2.614 (2.614)  Loss 19.726 (19.726)  Mem 13603
+[09/05 01:52:30.023]: Test: [400/633]  Time 0.144 (0.151)  Loss 21.916 (22.949)  Mem 13603
+[09/05 01:53:03.798]: => synchronize...
+[09/05 01:53:31.400]:   mAP: 83.08237917400402
+[09/05 01:53:34.131]: Test: [  0/633]  Time 2.713 (2.713)  Loss 25.923 (25.923)  Mem 13603
+[09/05 01:54:32.075]: Test: [400/633]  Time 0.144 (0.151)  Loss 23.714 (25.081)  Mem 13603
+[09/05 01:55:05.891]: => synchronize...
+[09/05 01:55:33.188]:   mAP: 86.75697502617928
+[09/05 01:55:33.204]: => Test Epoch: [18/80]  ETA 14:07:48  TT 0:13:47 (4:24:04)  Loss 22.844  mAP 83.08238  Loss_ema 25.016  mAP_ema 86.75698
+[09/05 01:55:33.210]: 18 | Set best mAP 86.76594779216546 in ep 17
+[09/05 01:55:33.210]:    | best regular mAP 83.921191190869 in ep 6
+[09/05 01:55:33.215]: lr:4.9729274552501086e-05
+[09/05 01:55:36.481]: Epoch: [19/80][   0/1293]  T 3.261 (3.261)  DT 2.577 (2.577)  S1 4.9 (4.9)  SA 19.6 (19.6)  LR 4.973e-05  Loss 9.040 (9.040)  Mem 13603
+[09/05 01:58:33.555]: Epoch: [19/80][ 400/1293]  T 0.438 (0.450)  DT 0.000 (0.007)  S1 36.5 (35.6)  SA 146.0 (142.3)  LR 4.967e-05  Loss 18.123 (17.004)  Mem 13603
+[09/05 02:01:29.499]: Epoch: [19/80][ 800/1293]  T 0.435 (0.445)  DT 0.000 (0.004)  S1 36.8 (36.0)  SA 147.2 (143.9)  LR 4.961e-05  Loss 17.343 (17.298)  Mem 13603
+[09/05 02:04:24.895]: Epoch: [19/80][1200/1293]  T 0.454 (0.443)  DT 0.000 (0.002)  S1 35.2 (36.1)  SA 141.0 (144.6)  LR 4.954e-05  Loss 15.297 (17.483)  Mem 13603
+[09/05 02:05:08.313]: Test: [  0/633]  Time 2.542 (2.542)  Loss 22.271 (22.271)  Mem 13603
+[09/05 02:06:06.624]: Test: [400/633]  Time 0.144 (0.152)  Loss 25.540 (24.355)  Mem 13603
+[09/05 02:06:40.738]: => synchronize...
+[09/05 02:07:07.852]:   mAP: 83.50354192633824
+[09/05 02:07:10.474]: Test: [  0/633]  Time 2.595 (2.595)  Loss 27.238 (27.238)  Mem 13603
+[09/05 02:08:08.444]: Test: [400/633]  Time 0.144 (0.151)  Loss 23.974 (25.335)  Mem 13603
+[09/05 02:08:42.545]: => synchronize...
+[09/05 02:09:09.890]:   mAP: 86.69563447619291
+[09/05 02:09:09.906]: => Test Epoch: [19/80]  ETA 13:53:02  TT 0:13:36 (4:37:40)  Loss 24.109  mAP 83.50354  Loss_ema 25.278  mAP_ema 86.69563
+[09/05 02:09:09.912]: 19 | Set best mAP 86.76594779216546 in ep 17
+[09/05 02:09:09.912]:    | best regular mAP 83.921191190869 in ep 6
+[09/05 02:09:09.915]: lr:4.951944875465118e-05
+[09/05 02:09:13.310]: Epoch: [20/80][   0/1293]  T 3.394 (3.394)  DT 2.708 (2.708)  S1 4.7 (4.7)  SA 18.9 (18.9)  LR 4.952e-05  Loss 20.403 (20.403)  Mem 13603
+[09/05 02:12:13.174]: Epoch: [20/80][ 400/1293]  T 0.437 (0.457)  DT 0.000 (0.007)  S1 36.6 (35.0)  SA 146.5 (140.0)  LR 4.944e-05  Loss 19.326 (16.482)  Mem 13603
+[09/05 02:15:08.557]: Epoch: [20/80][ 800/1293]  T 0.436 (0.448)  DT 0.000 (0.004)  S1 36.7 (35.7)  SA 146.9 (142.9)  LR 4.936e-05  Loss 7.797 (16.426)  Mem 13603
+[09/05 02:18:04.393]: Epoch: [20/80][1200/1293]  T 0.423 (0.445)  DT 0.000 (0.003)  S1 37.8 (36.0)  SA 151.2 (143.8)  LR 4.927e-05  Loss 14.262 (16.714)  Mem 13603
+[09/05 02:18:47.906]: Test: [  0/633]  Time 2.964 (2.964)  Loss 24.846 (24.846)  Mem 13603
+[09/05 02:19:46.213]: Test: [400/633]  Time 0.144 (0.153)  Loss 27.804 (25.886)  Mem 13603
+[09/05 02:20:20.255]: => synchronize...
+[09/05 02:20:47.030]:   mAP: 83.0311574839108
+[09/05 02:20:49.929]: Test: [  0/633]  Time 2.879 (2.879)  Loss 28.227 (28.227)  Mem 13603
+[09/05 02:21:48.191]: Test: [400/633]  Time 0.144 (0.152)  Loss 23.329 (25.593)  Mem 13603
+[09/05 02:22:22.196]: => synchronize...
+[09/05 02:22:49.152]:   mAP: 86.60918761110355
+[09/05 02:22:49.169]: => Test Epoch: [20/80]  ETA 13:38:31  TT 0:13:39 (4:51:20)  Loss 25.669  mAP 83.03116  Loss_ema 25.546  mAP_ema 86.60919
+[09/05 02:22:49.176]: 20 | Set best mAP 86.76594779216546 in ep 17
+[09/05 02:22:49.176]:    | best regular mAP 83.921191190869 in ep 6
+[09/05 02:22:49.181]: lr:4.925055369801002e-05
+[09/05 02:22:52.217]: Epoch: [21/80][   0/1293]  T 3.030 (3.030)  DT 2.101 (2.101)  S1 5.3 (5.3)  SA 21.1 (21.1)  LR 4.925e-05  Loss 13.460 (13.460)  Mem 13603
+[09/05 02:25:47.377]: Epoch: [21/80][ 400/1293]  T 0.433 (0.444)  DT 0.000 (0.006)  S1 36.9 (36.0)  SA 147.7 (144.0)  LR 4.916e-05  Loss 17.694 (15.805)  Mem 13603
+[09/05 02:28:41.332]: Epoch: [21/80][ 800/1293]  T 0.436 (0.440)  DT 0.000 (0.003)  S1 36.7 (36.4)  SA 146.8 (145.6)  LR 4.905e-05  Loss 15.678 (16.089)  Mem 13603
+[09/05 02:31:35.880]: Epoch: [21/80][1200/1293]  T 0.426 (0.439)  DT 0.000 (0.002)  S1 37.5 (36.5)  SA 150.1 (145.9)  LR 4.895e-05  Loss 14.108 (16.239)  Mem 13603
+[09/05 02:32:18.386]: Test: [  0/633]  Time 2.320 (2.320)  Loss 25.470 (25.470)  Mem 13603
+[09/05 02:33:16.494]: Test: [400/633]  Time 0.144 (0.151)  Loss 29.303 (25.711)  Mem 13603
+[09/05 02:33:50.300]: => synchronize...
+[09/05 02:34:20.776]:   mAP: 83.07844448650917
+[09/05 02:34:23.171]: Test: [  0/633]  Time 2.378 (2.378)  Loss 28.583 (28.583)  Mem 13603
+[09/05 02:35:21.106]: Test: [400/633]  Time 0.144 (0.150)  Loss 22.911 (25.828)  Mem 13603
+[09/05 02:35:54.901]: => synchronize...
+[09/05 02:36:22.808]:   mAP: 86.51702660049828
+[09/05 02:36:22.824]: => Test Epoch: [21/80]  ETA 13:23:49  TT 0:13:33 (5:04:53)  Loss 25.587  mAP 83.07844  Loss_ema 25.764  mAP_ema 86.51703
+[09/05 02:36:22.830]: 21 | Set best mAP 86.76594779216546 in ep 17
+[09/05 02:36:22.830]:    | best regular mAP 83.921191190869 in ep 6
+[09/05 02:36:22.835]: lr:4.8923237174321475e-05
+[09/05 02:36:25.988]: Epoch: [22/80][   0/1293]  T 3.152 (3.152)  DT 2.503 (2.503)  S1 5.1 (5.1)  SA 20.3 (20.3)  LR 4.892e-05  Loss 9.202 (9.202)  Mem 13603
+[09/05 02:39:20.229]: Epoch: [22/80][ 400/1293]  T 0.429 (0.442)  DT 0.000 (0.007)  S1 37.3 (36.2)  SA 149.3 (144.7)  LR 4.881e-05  Loss 17.186 (14.880)  Mem 13603
+[09/05 02:42:13.694]: Epoch: [22/80][ 800/1293]  T 0.446 (0.438)  DT 0.000 (0.003)  S1 35.9 (36.5)  SA 143.5 (146.1)  LR 4.869e-05  Loss 15.185 (15.283)  Mem 13603
+[09/05 02:45:07.862]: Epoch: [22/80][1200/1293]  T 0.441 (0.437)  DT 0.000 (0.002)  S1 36.3 (36.6)  SA 145.3 (146.4)  LR 4.857e-05  Loss 14.742 (15.460)  Mem 13603
+[09/05 02:45:50.537]: Test: [  0/633]  Time 2.482 (2.482)  Loss 18.508 (18.508)  Mem 13603
+[09/05 02:46:48.627]: Test: [400/633]  Time 0.144 (0.151)  Loss 26.705 (25.324)  Mem 13603
+[09/05 02:47:22.412]: => synchronize...
+[09/05 02:47:52.019]:   mAP: 82.96406293084802
+[09/05 02:47:54.707]: Test: [  0/633]  Time 2.669 (2.669)  Loss 27.561 (27.561)  Mem 13603
+[09/05 02:48:52.627]: Test: [400/633]  Time 0.144 (0.151)  Loss 23.574 (26.034)  Mem 13603
+[09/05 02:49:26.408]: => synchronize...
+[09/05 02:49:54.125]:   mAP: 86.42749358211643
+[09/05 02:49:54.142]: => Test Epoch: [22/80]  ETA 13:09:07  TT 0:13:31 (5:18:25)  Loss 25.130  mAP 82.96406  Loss_ema 25.976  mAP_ema 86.42749
+[09/05 02:49:54.147]: 22 | Set best mAP 86.76594779216546 in ep 17
+[09/05 02:49:54.148]:    | best regular mAP 83.921191190869 in ep 6
+[09/05 02:49:54.151]: lr:4.8538287717760656e-05
+[09/05 02:49:57.473]: Epoch: [23/80][   0/1293]  T 3.319 (3.319)  DT 2.691 (2.691)  S1 4.8 (4.8)  SA 19.3 (19.3)  LR 4.854e-05  Loss 20.902 (20.902)  Mem 13603
+[09/05 02:52:51.225]: Epoch: [23/80][ 400/1293]  T 0.432 (0.442)  DT 0.000 (0.007)  S1 37.0 (36.2)  SA 148.1 (144.9)  LR 4.841e-05  Loss 11.411 (14.694)  Mem 13603
+[09/05 02:55:44.755]: Epoch: [23/80][ 800/1293]  T 0.427 (0.438)  DT 0.000 (0.004)  S1 37.5 (36.6)  SA 150.0 (146.2)  LR 4.827e-05  Loss 13.197 (14.920)  Mem 13603
+[09/05 02:58:38.035]: Epoch: [23/80][1200/1293]  T 0.432 (0.436)  DT 0.000 (0.003)  S1 37.1 (36.7)  SA 148.3 (146.7)  LR 4.813e-05  Loss 20.160 (15.119)  Mem 13603
+[09/05 02:59:20.328]: Test: [  0/633]  Time 2.471 (2.471)  Loss 28.091 (28.091)  Mem 13603
+[09/05 03:00:18.707]: Test: [400/633]  Time 0.144 (0.152)  Loss 26.460 (25.460)  Mem 13603
+[09/05 03:00:52.640]: => synchronize...
+[09/05 03:01:22.357]:   mAP: 83.1829906377779
+[09/05 03:01:24.765]: Test: [  0/633]  Time 2.389 (2.389)  Loss 27.467 (27.467)  Mem 13603
+[09/05 03:02:22.576]: Test: [400/633]  Time 0.144 (0.150)  Loss 24.038 (26.380)  Mem 13603
+[09/05 03:02:56.331]: => synchronize...
+[09/05 03:03:23.871]:   mAP: 86.32940699393626
+[09/05 03:03:23.887]: => Test Epoch: [23/80]  ETA 12:54:28  TT 0:13:29 (5:31:54)  Loss 25.155  mAP 83.18299  Loss_ema 26.290  mAP_ema 86.32941
+[09/05 03:03:23.892]: 23 | Set best mAP 86.76594779216546 in ep 17
+[09/05 03:03:23.892]:    | best regular mAP 83.921191190869 in ep 6
+[09/05 03:03:23.896]: lr:4.8096632705286006e-05
+[09/05 03:03:26.898]: Epoch: [24/80][   0/1293]  T 3.000 (3.000)  DT 1.934 (1.934)  S1 5.3 (5.3)  SA 21.3 (21.3)  LR 4.810e-05  Loss 8.203 (8.203)  Mem 13603
+[09/05 03:06:23.342]: Epoch: [24/80][ 400/1293]  T 0.431 (0.447)  DT 0.000 (0.005)  S1 37.1 (35.8)  SA 148.4 (143.0)  LR 4.795e-05  Loss 10.485 (14.562)  Mem 13603
+[09/05 03:09:19.190]: Epoch: [24/80][ 800/1293]  T 0.449 (0.444)  DT 0.000 (0.003)  S1 35.7 (36.1)  SA 142.6 (144.3)  LR 4.780e-05  Loss 10.677 (14.583)  Mem 13603
+[09/05 03:12:15.159]: Epoch: [24/80][1200/1293]  T 0.436 (0.442)  DT 0.000 (0.002)  S1 36.7 (36.2)  SA 146.9 (144.7)  LR 4.764e-05  Loss 25.811 (14.623)  Mem 13603
+[09/05 03:12:58.394]: Test: [  0/633]  Time 2.656 (2.656)  Loss 31.844 (31.844)  Mem 13603
+[09/05 03:13:56.339]: Test: [400/633]  Time 0.146 (0.151)  Loss 28.289 (27.148)  Mem 13603
+[09/05 03:14:30.164]: => synchronize...
+[09/05 03:14:58.756]:   mAP: 82.8709353628182
+[09/05 03:15:01.434]: Test: [  0/633]  Time 2.659 (2.659)  Loss 26.754 (26.754)  Mem 13603
+[09/05 03:15:59.669]: Test: [400/633]  Time 0.144 (0.152)  Loss 24.650 (26.646)  Mem 13603
+[09/05 03:16:33.508]: => synchronize...
+[09/05 03:17:03.829]:   mAP: 86.27044083957311
+[09/05 03:17:03.845]: => Test Epoch: [24/80]  ETA 12:40:16  TT 0:13:39 (5:45:34)  Loss 27.106  mAP 82.87094  Loss_ema 26.516  mAP_ema 86.27044
+[09/05 03:17:03.851]: 24 | Set best mAP 86.76594779216546 in ep 17
+[09/05 03:17:03.852]:    | best regular mAP 83.921191190869 in ep 6
+[09/05 03:17:03.856]: lr:4.759933612250698e-05
+[09/05 03:17:07.252]: Epoch: [25/80][   0/1293]  T 3.394 (3.394)  DT 1.851 (1.851)  S1 4.7 (4.7)  SA 18.9 (18.9)  LR 4.760e-05  Loss 17.224 (17.224)  Mem 13603
+[09/05 03:20:03.710]: Epoch: [25/80][ 400/1293]  T 0.459 (0.449)  DT 0.000 (0.005)  S1 34.8 (35.7)  SA 139.4 (142.7)  LR 4.743e-05  Loss 13.942 (13.669)  Mem 13603
+[09/05 03:23:03.727]: Epoch: [25/80][ 800/1293]  T 0.431 (0.449)  DT 0.000 (0.003)  S1 37.1 (35.6)  SA 148.5 (142.5)  LR 4.726e-05  Loss 10.622 (13.919)  Mem 13603
+[09/05 03:26:07.317]: Epoch: [25/80][1200/1293]  T 0.441 (0.452)  DT 0.000 (0.002)  S1 36.3 (35.4)  SA 145.2 (141.4)  LR 4.709e-05  Loss 17.028 (14.104)  Mem 13603
+[09/05 03:26:50.425]: Test: [  0/633]  Time 2.444 (2.444)  Loss 25.673 (25.673)  Mem 13603
+[09/05 03:27:48.487]: Test: [400/633]  Time 0.144 (0.151)  Loss 24.088 (26.719)  Mem 13603
+[09/05 03:28:22.521]: => synchronize...
+[09/05 03:28:51.308]:   mAP: 82.71628813393079
+[09/05 03:28:53.232]: Test: [  0/633]  Time 1.906 (1.906)  Loss 26.723 (26.723)  Mem 13603
+[09/05 03:29:51.534]: Test: [400/633]  Time 0.144 (0.150)  Loss 25.781 (26.934)  Mem 13603
+[09/05 03:30:25.335]: => synchronize...
+[09/05 03:30:53.933]:   mAP: 86.18929876912713
+[09/05 03:30:53.949]: => Test Epoch: [25/80]  ETA 12:26:28  TT 0:13:50 (5:59:24)  Loss 26.403  mAP 82.71629  Loss_ema 26.797  mAP_ema 86.18930
+[09/05 03:30:53.955]: 25 | Set best mAP 86.76594779216546 in ep 17
+[09/05 03:30:53.955]:    | best regular mAP 83.921191190869 in ep 6
+[09/05 03:30:53.958]: lr:4.7047596000449546e-05
+[09/05 03:30:57.472]: Epoch: [26/80][   0/1293]  T 3.512 (3.512)  DT 2.364 (2.364)  S1 4.6 (4.6)  SA 18.2 (18.2)  LR 4.705e-05  Loss 13.172 (13.172)  Mem 13603
+[09/05 03:33:52.597]: Epoch: [26/80][ 400/1293]  T 0.434 (0.445)  DT 0.000 (0.006)  S1 36.8 (35.9)  SA 147.4 (143.7)  LR 4.687e-05  Loss 15.317 (13.506)  Mem 13603
+[09/05 03:36:47.670]: Epoch: [26/80][ 800/1293]  T 0.434 (0.442)  DT 0.000 (0.003)  S1 36.9 (36.2)  SA 147.5 (144.9)  LR 4.668e-05  Loss 10.212 (13.649)  Mem 13603
+[09/05 03:39:42.881]: Epoch: [26/80][1200/1293]  T 0.435 (0.440)  DT 0.000 (0.002)  S1 36.8 (36.3)  SA 147.2 (145.3)  LR 4.649e-05  Loss 11.912 (13.783)  Mem 13603
+[09/05 03:40:25.112]: Test: [  0/633]  Time 1.910 (1.910)  Loss 19.500 (19.500)  Mem 13603
+[09/05 03:41:23.392]: Test: [400/633]  Time 0.144 (0.150)  Loss 24.267 (26.158)  Mem 13603
+[09/05 03:41:57.170]: => synchronize...
+[09/05 03:42:26.029]:   mAP: 82.95335865793939
+[09/05 03:42:28.578]: Test: [  0/633]  Time 2.531 (2.531)  Loss 26.061 (26.061)  Mem 13603
+[09/05 03:43:26.502]: Test: [400/633]  Time 0.144 (0.151)  Loss 25.545 (27.195)  Mem 13603
+[09/05 03:44:00.170]: => synchronize...
+[09/05 03:44:28.314]:   mAP: 86.09029945509272
+[09/05 03:44:28.330]: => Test Epoch: [26/80]  ETA 12:12:09  TT 0:13:34 (6:12:59)  Loss 25.747  mAP 82.95336  Loss_ema 27.034  mAP_ema 86.09030
+[09/05 03:44:28.336]: 26 | Set best mAP 86.76594779216546 in ep 17
+[09/05 03:44:28.336]:    | best regular mAP 83.921191190869 in ep 6
+[09/05 03:44:28.336]: epoch - best_epoch = 9, stop!
