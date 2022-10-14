@@ -1,0 +1,819 @@
+[08/13 13:05:47.230]: Command: main_mlc.py -a Q2L-TResL_22k-448 --backbone tresnetl_v2 --dataname coco14 --batch-size 112 --print-freq 400 --dataset_dir /media/mlldiskSSD/MLICdataset --output ./output/TResNetV2_448_COCO/bs112_best --world-size 1 --rank 0 --dist-url tcp://127.0.0.1:3716 --gamma_pos 0 --gamma_neg 0 --dtgfl --loss_clip 0 --epochs 80 --lr 1e-4 --optim Adam_twd --pretrained --num_class 80 --img_size 448 --weight-decay 1e-2 --cutout --n_holes 1 --cut_fact 0.5 --length 224 --orid_norm --hidden_dim 2048 --dim_feedforward 2048 --enc_layers 1 --dec_layers 2 --nheads 4 --early-stop --amp --ema-decay 0.9997 --seed 1 --gpus 0,1,2,3
+[08/13 13:05:47.231]: Full config saved to ./output/TResNetV2_448_COCO/bs112_best/config.json
+[08/13 13:05:47.231]: world size: 4
+[08/13 13:05:47.231]: dist.get_rank(): 0
+[08/13 13:05:47.231]: local_rank: 0
+[08/13 13:05:47.231]: ==========================================
+[08/13 13:05:47.231]: ==========       CONFIG      =============
+[08/13 13:05:47.231]: ==========================================
+[08/13 13:05:47.231]: dataname: coco14
+[08/13 13:05:47.231]: dataset_dir: /media/mlldiskSSD/MLICdataset
+[08/13 13:05:47.231]: img_size: 448
+[08/13 13:05:47.231]: output: ./output/TResNetV2_448_COCO/bs112_best
+[08/13 13:05:47.231]: num_class: 80
+[08/13 13:05:47.231]: pretrained: True
+[08/13 13:05:47.231]: frozen_backbone: False
+[08/13 13:05:47.231]: optim: Adam_twd
+[08/13 13:05:47.231]: arch: Q2L-TResL_22k-448
+[08/13 13:05:47.231]: eps: 1e-05
+[08/13 13:05:47.231]: dtgfl: True
+[08/13 13:05:47.231]: gamma_pos: 0.0
+[08/13 13:05:47.232]: gamma_neg: 0.0
+[08/13 13:05:47.232]: loss_dev: -1
+[08/13 13:05:47.232]: loss_clip: 0.0
+[08/13 13:05:47.232]: workers: 8
+[08/13 13:05:47.232]: epochs: 80
+[08/13 13:05:47.232]: val_interval: 1
+[08/13 13:05:47.232]: start_epoch: 0
+[08/13 13:05:47.232]: batch_size: 112
+[08/13 13:05:47.232]: lr: 0.0001
+[08/13 13:05:47.232]: lrp: 0.1
+[08/13 13:05:47.232]: weight_decay: 0.01
+[08/13 13:05:47.232]: print_freq: 400
+[08/13 13:05:47.232]: resume: 
+[08/13 13:05:47.232]: resume_omit: []
+[08/13 13:05:47.232]: evaluate: False
+[08/13 13:05:47.232]: ema_decay: 0.9997
+[08/13 13:05:47.232]: ema_epoch: 0
+[08/13 13:05:47.232]: world_size: 4
+[08/13 13:05:47.232]: rank: 0
+[08/13 13:05:47.233]: dist_url: tcp://127.0.0.1:3716
+[08/13 13:05:47.233]: seed: 1
+[08/13 13:05:47.233]: local_rank: 0
+[08/13 13:05:47.233]: crop: False
+[08/13 13:05:47.233]: cutout: True
+[08/13 13:05:47.233]: n_holes: 1
+[08/13 13:05:47.233]: length: 224
+[08/13 13:05:47.233]: cut_fact: 0.5
+[08/13 13:05:47.233]: orid_norm: True
+[08/13 13:05:47.233]: remove_norm: False
+[08/13 13:05:47.233]: mix_up: False
+[08/13 13:05:47.233]: enc_layers: 1
+[08/13 13:05:47.233]: dec_layers: 2
+[08/13 13:05:47.233]: dim_feedforward: 2048
+[08/13 13:05:47.233]: hidden_dim: 2048
+[08/13 13:05:47.233]: dropout: 0.1
+[08/13 13:05:47.233]: nheads: 4
+[08/13 13:05:47.233]: pre_norm: False
+[08/13 13:05:47.233]: position_embedding: sine
+[08/13 13:05:47.233]: backbone: tresnetl_v2
+[08/13 13:05:47.234]: keep_other_self_attn_dec: False
+[08/13 13:05:47.234]: keep_first_self_attn_dec: False
+[08/13 13:05:47.234]: keep_input_proj: False
+[08/13 13:05:47.234]: amp: True
+[08/13 13:05:47.234]: early_stop: True
+[08/13 13:05:47.234]: kill_stop: False
+[08/13 13:05:47.234]: out_aps: False
+[08/13 13:05:47.234]: gpus: 0,1,2,3
+[08/13 13:05:47.234]: ==========================================
+[08/13 13:05:47.234]: ===========        END        ============
+[08/13 13:05:47.234]: ==========================================
+[08/13 13:05:47.234]: 
+
+[08/13 13:05:56.909]: number of params:119748048
+[08/13 13:05:56.912]: params:
+{
+  "module.backbone.0.body.body.layer2.0.conv1.0.weight": 32768,
+  "module.backbone.0.body.body.layer2.0.conv1.1.weight": 128,
+  "module.backbone.0.body.body.layer2.0.conv1.1.bias": 128,
+  "module.backbone.0.body.body.layer2.0.conv2.0.0.weight": 147456,
+  "module.backbone.0.body.body.layer2.0.conv2.0.1.weight": 128,
+  "module.backbone.0.body.body.layer2.0.conv2.0.1.bias": 128,
+  "module.backbone.0.body.body.layer2.0.conv3.0.weight": 65536,
+  "module.backbone.0.body.body.layer2.0.conv3.1.weight": 512,
+  "module.backbone.0.body.body.layer2.0.conv3.1.bias": 512,
+  "module.backbone.0.body.body.layer2.0.downsample.1.0.weight": 131072,
+  "module.backbone.0.body.body.layer2.0.downsample.1.1.weight": 512,
+  "module.backbone.0.body.body.layer2.0.downsample.1.1.bias": 512,
+  "module.backbone.0.body.body.layer2.0.se.fc1.weight": 8192,
+  "module.backbone.0.body.body.layer2.0.se.fc1.bias": 64,
+  "module.backbone.0.body.body.layer2.0.se.fc2.weight": 8192,
+  "module.backbone.0.body.body.layer2.0.se.fc2.bias": 128,
+  "module.backbone.0.body.body.layer2.1.conv1.0.weight": 65536,
+  "module.backbone.0.body.body.layer2.1.conv1.1.weight": 128,
+  "module.backbone.0.body.body.layer2.1.conv1.1.bias": 128,
+  "module.backbone.0.body.body.layer2.1.conv2.0.weight": 147456,
+  "module.backbone.0.body.body.layer2.1.conv2.1.weight": 128,
+  "module.backbone.0.body.body.layer2.1.conv2.1.bias": 128,
+  "module.backbone.0.body.body.layer2.1.conv3.0.weight": 65536,
+  "module.backbone.0.body.body.layer2.1.conv3.1.weight": 512,
+  "module.backbone.0.body.body.layer2.1.conv3.1.bias": 512,
+  "module.backbone.0.body.body.layer2.1.se.fc1.weight": 8192,
+  "module.backbone.0.body.body.layer2.1.se.fc1.bias": 64,
+  "module.backbone.0.body.body.layer2.1.se.fc2.weight": 8192,
+  "module.backbone.0.body.body.layer2.1.se.fc2.bias": 128,
+  "module.backbone.0.body.body.layer2.2.conv1.0.weight": 65536,
+  "module.backbone.0.body.body.layer2.2.conv1.1.weight": 128,
+  "module.backbone.0.body.body.layer2.2.conv1.1.bias": 128,
+  "module.backbone.0.body.body.layer2.2.conv2.0.weight": 147456,
+  "module.backbone.0.body.body.layer2.2.conv2.1.weight": 128,
+  "module.backbone.0.body.body.layer2.2.conv2.1.bias": 128,
+  "module.backbone.0.body.body.layer2.2.conv3.0.weight": 65536,
+  "module.backbone.0.body.body.layer2.2.conv3.1.weight": 512,
+  "module.backbone.0.body.body.layer2.2.conv3.1.bias": 512,
+  "module.backbone.0.body.body.layer2.2.se.fc1.weight": 8192,
+  "module.backbone.0.body.body.layer2.2.se.fc1.bias": 64,
+  "module.backbone.0.body.body.layer2.2.se.fc2.weight": 8192,
+  "module.backbone.0.body.body.layer2.2.se.fc2.bias": 128,
+  "module.backbone.0.body.body.layer2.3.conv1.0.weight": 65536,
+  "module.backbone.0.body.body.layer2.3.conv1.1.weight": 128,
+  "module.backbone.0.body.body.layer2.3.conv1.1.bias": 128,
+  "module.backbone.0.body.body.layer2.3.conv2.0.weight": 147456,
+  "module.backbone.0.body.body.layer2.3.conv2.1.weight": 128,
+  "module.backbone.0.body.body.layer2.3.conv2.1.bias": 128,
+  "module.backbone.0.body.body.layer2.3.conv3.0.weight": 65536,
+  "module.backbone.0.body.body.layer2.3.conv3.1.weight": 512,
+  "module.backbone.0.body.body.layer2.3.conv3.1.bias": 512,
+  "module.backbone.0.body.body.layer2.3.se.fc1.weight": 8192,
+  "module.backbone.0.body.body.layer2.3.se.fc1.bias": 64,
+  "module.backbone.0.body.body.layer2.3.se.fc2.weight": 8192,
+  "module.backbone.0.body.body.layer2.3.se.fc2.bias": 128,
+  "module.backbone.0.body.body.layer3.0.conv1.0.weight": 131072,
+  "module.backbone.0.body.body.layer3.0.conv1.1.weight": 256,
+  "module.backbone.0.body.body.layer3.0.conv1.1.bias": 256,
+  "module.backbone.0.body.body.layer3.0.conv2.0.0.weight": 589824,
+  "module.backbone.0.body.body.layer3.0.conv2.0.1.weight": 256,
+  "module.backbone.0.body.body.layer3.0.conv2.0.1.bias": 256,
+  "module.backbone.0.body.body.layer3.0.conv3.0.weight": 262144,
+  "module.backbone.0.body.body.layer3.0.conv3.1.weight": 1024,
+  "module.backbone.0.body.body.layer3.0.conv3.1.bias": 1024,
+  "module.backbone.0.body.body.layer3.0.downsample.1.0.weight": 524288,
+  "module.backbone.0.body.body.layer3.0.downsample.1.1.weight": 1024,
+  "module.backbone.0.body.body.layer3.0.downsample.1.1.bias": 1024,
+  "module.backbone.0.body.body.layer3.0.se.fc1.weight": 32768,
+  "module.backbone.0.body.body.layer3.0.se.fc1.bias": 128,
+  "module.backbone.0.body.body.layer3.0.se.fc2.weight": 32768,
+  "module.backbone.0.body.body.layer3.0.se.fc2.bias": 256,
+  "module.backbone.0.body.body.layer3.1.conv1.0.weight": 262144,
+  "module.backbone.0.body.body.layer3.1.conv1.1.weight": 256,
+  "module.backbone.0.body.body.layer3.1.conv1.1.bias": 256,
+  "module.backbone.0.body.body.layer3.1.conv2.0.weight": 589824,
+  "module.backbone.0.body.body.layer3.1.conv2.1.weight": 256,
+  "module.backbone.0.body.body.layer3.1.conv2.1.bias": 256,
+  "module.backbone.0.body.body.layer3.1.conv3.0.weight": 262144,
+  "module.backbone.0.body.body.layer3.1.conv3.1.weight": 1024,
+  "module.backbone.0.body.body.layer3.1.conv3.1.bias": 1024,
+  "module.backbone.0.body.body.layer3.1.se.fc1.weight": 32768,
+  "module.backbone.0.body.body.layer3.1.se.fc1.bias": 128,
+  "module.backbone.0.body.body.layer3.1.se.fc2.weight": 32768,
+  "module.backbone.0.body.body.layer3.1.se.fc2.bias": 256,
+  "module.backbone.0.body.body.layer3.2.conv1.0.weight": 262144,
+  "module.backbone.0.body.body.layer3.2.conv1.1.weight": 256,
+  "module.backbone.0.body.body.layer3.2.conv1.1.bias": 256,
+  "module.backbone.0.body.body.layer3.2.conv2.0.weight": 589824,
+  "module.backbone.0.body.body.layer3.2.conv2.1.weight": 256,
+  "module.backbone.0.body.body.layer3.2.conv2.1.bias": 256,
+  "module.backbone.0.body.body.layer3.2.conv3.0.weight": 262144,
+  "module.backbone.0.body.body.layer3.2.conv3.1.weight": 1024,
+  "module.backbone.0.body.body.layer3.2.conv3.1.bias": 1024,
+  "module.backbone.0.body.body.layer3.2.se.fc1.weight": 32768,
+  "module.backbone.0.body.body.layer3.2.se.fc1.bias": 128,
+  "module.backbone.0.body.body.layer3.2.se.fc2.weight": 32768,
+  "module.backbone.0.body.body.layer3.2.se.fc2.bias": 256,
+  "module.backbone.0.body.body.layer3.3.conv1.0.weight": 262144,
+  "module.backbone.0.body.body.layer3.3.conv1.1.weight": 256,
+  "module.backbone.0.body.body.layer3.3.conv1.1.bias": 256,
+  "module.backbone.0.body.body.layer3.3.conv2.0.weight": 589824,
+  "module.backbone.0.body.body.layer3.3.conv2.1.weight": 256,
+  "module.backbone.0.body.body.layer3.3.conv2.1.bias": 256,
+  "module.backbone.0.body.body.layer3.3.conv3.0.weight": 262144,
+  "module.backbone.0.body.body.layer3.3.conv3.1.weight": 1024,
+  "module.backbone.0.body.body.layer3.3.conv3.1.bias": 1024,
+  "module.backbone.0.body.body.layer3.3.se.fc1.weight": 32768,
+  "module.backbone.0.body.body.layer3.3.se.fc1.bias": 128,
+  "module.backbone.0.body.body.layer3.3.se.fc2.weight": 32768,
+  "module.backbone.0.body.body.layer3.3.se.fc2.bias": 256,
+  "module.backbone.0.body.body.layer3.4.conv1.0.weight": 262144,
+  "module.backbone.0.body.body.layer3.4.conv1.1.weight": 256,
+  "module.backbone.0.body.body.layer3.4.conv1.1.bias": 256,
+  "module.backbone.0.body.body.layer3.4.conv2.0.weight": 589824,
+  "module.backbone.0.body.body.layer3.4.conv2.1.weight": 256,
+  "module.backbone.0.body.body.layer3.4.conv2.1.bias": 256,
+  "module.backbone.0.body.body.layer3.4.conv3.0.weight": 262144,
+  "module.backbone.0.body.body.layer3.4.conv3.1.weight": 1024,
+  "module.backbone.0.body.body.layer3.4.conv3.1.bias": 1024,
+  "module.backbone.0.body.body.layer3.4.se.fc1.weight": 32768,
+  "module.backbone.0.body.body.layer3.4.se.fc1.bias": 128,
+  "module.backbone.0.body.body.layer3.4.se.fc2.weight": 32768,
+  "module.backbone.0.body.body.layer3.4.se.fc2.bias": 256,
+  "module.backbone.0.body.body.layer3.5.conv1.0.weight": 262144,
+  "module.backbone.0.body.body.layer3.5.conv1.1.weight": 256,
+  "module.backbone.0.body.body.layer3.5.conv1.1.bias": 256,
+  "module.backbone.0.body.body.layer3.5.conv2.0.weight": 589824,
+  "module.backbone.0.body.body.layer3.5.conv2.1.weight": 256,
+  "module.backbone.0.body.body.layer3.5.conv2.1.bias": 256,
+  "module.backbone.0.body.body.layer3.5.conv3.0.weight": 262144,
+  "module.backbone.0.body.body.layer3.5.conv3.1.weight": 1024,
+  "module.backbone.0.body.body.layer3.5.conv3.1.bias": 1024,
+  "module.backbone.0.body.body.layer3.5.se.fc1.weight": 32768,
+  "module.backbone.0.body.body.layer3.5.se.fc1.bias": 128,
+  "module.backbone.0.body.body.layer3.5.se.fc2.weight": 32768,
+  "module.backbone.0.body.body.layer3.5.se.fc2.bias": 256,
+  "module.backbone.0.body.body.layer3.6.conv1.0.weight": 262144,
+  "module.backbone.0.body.body.layer3.6.conv1.1.weight": 256,
+  "module.backbone.0.body.body.layer3.6.conv1.1.bias": 256,
+  "module.backbone.0.body.body.layer3.6.conv2.0.weight": 589824,
+  "module.backbone.0.body.body.layer3.6.conv2.1.weight": 256,
+  "module.backbone.0.body.body.layer3.6.conv2.1.bias": 256,
+  "module.backbone.0.body.body.layer3.6.conv3.0.weight": 262144,
+  "module.backbone.0.body.body.layer3.6.conv3.1.weight": 1024,
+  "module.backbone.0.body.body.layer3.6.conv3.1.bias": 1024,
+  "module.backbone.0.body.body.layer3.6.se.fc1.weight": 32768,
+  "module.backbone.0.body.body.layer3.6.se.fc1.bias": 128,
+  "module.backbone.0.body.body.layer3.6.se.fc2.weight": 32768,
+  "module.backbone.0.body.body.layer3.6.se.fc2.bias": 256,
+  "module.backbone.0.body.body.layer3.7.conv1.0.weight": 262144,
+  "module.backbone.0.body.body.layer3.7.conv1.1.weight": 256,
+  "module.backbone.0.body.body.layer3.7.conv1.1.bias": 256,
+  "module.backbone.0.body.body.layer3.7.conv2.0.weight": 589824,
+  "module.backbone.0.body.body.layer3.7.conv2.1.weight": 256,
+  "module.backbone.0.body.body.layer3.7.conv2.1.bias": 256,
+  "module.backbone.0.body.body.layer3.7.conv3.0.weight": 262144,
+  "module.backbone.0.body.body.layer3.7.conv3.1.weight": 1024,
+  "module.backbone.0.body.body.layer3.7.conv3.1.bias": 1024,
+  "module.backbone.0.body.body.layer3.7.se.fc1.weight": 32768,
+  "module.backbone.0.body.body.layer3.7.se.fc1.bias": 128,
+  "module.backbone.0.body.body.layer3.7.se.fc2.weight": 32768,
+  "module.backbone.0.body.body.layer3.7.se.fc2.bias": 256,
+  "module.backbone.0.body.body.layer3.8.conv1.0.weight": 262144,
+  "module.backbone.0.body.body.layer3.8.conv1.1.weight": 256,
+  "module.backbone.0.body.body.layer3.8.conv1.1.bias": 256,
+  "module.backbone.0.body.body.layer3.8.conv2.0.weight": 589824,
+  "module.backbone.0.body.body.layer3.8.conv2.1.weight": 256,
+  "module.backbone.0.body.body.layer3.8.conv2.1.bias": 256,
+  "module.backbone.0.body.body.layer3.8.conv3.0.weight": 262144,
+  "module.backbone.0.body.body.layer3.8.conv3.1.weight": 1024,
+  "module.backbone.0.body.body.layer3.8.conv3.1.bias": 1024,
+  "module.backbone.0.body.body.layer3.8.se.fc1.weight": 32768,
+  "module.backbone.0.body.body.layer3.8.se.fc1.bias": 128,
+  "module.backbone.0.body.body.layer3.8.se.fc2.weight": 32768,
+  "module.backbone.0.body.body.layer3.8.se.fc2.bias": 256,
+  "module.backbone.0.body.body.layer3.9.conv1.0.weight": 262144,
+  "module.backbone.0.body.body.layer3.9.conv1.1.weight": 256,
+  "module.backbone.0.body.body.layer3.9.conv1.1.bias": 256,
+  "module.backbone.0.body.body.layer3.9.conv2.0.weight": 589824,
+  "module.backbone.0.body.body.layer3.9.conv2.1.weight": 256,
+  "module.backbone.0.body.body.layer3.9.conv2.1.bias": 256,
+  "module.backbone.0.body.body.layer3.9.conv3.0.weight": 262144,
+  "module.backbone.0.body.body.layer3.9.conv3.1.weight": 1024,
+  "module.backbone.0.body.body.layer3.9.conv3.1.bias": 1024,
+  "module.backbone.0.body.body.layer3.9.se.fc1.weight": 32768,
+  "module.backbone.0.body.body.layer3.9.se.fc1.bias": 128,
+  "module.backbone.0.body.body.layer3.9.se.fc2.weight": 32768,
+  "module.backbone.0.body.body.layer3.9.se.fc2.bias": 256,
+  "module.backbone.0.body.body.layer3.10.conv1.0.weight": 262144,
+  "module.backbone.0.body.body.layer3.10.conv1.1.weight": 256,
+  "module.backbone.0.body.body.layer3.10.conv1.1.bias": 256,
+  "module.backbone.0.body.body.layer3.10.conv2.0.weight": 589824,
+  "module.backbone.0.body.body.layer3.10.conv2.1.weight": 256,
+  "module.backbone.0.body.body.layer3.10.conv2.1.bias": 256,
+  "module.backbone.0.body.body.layer3.10.conv3.0.weight": 262144,
+  "module.backbone.0.body.body.layer3.10.conv3.1.weight": 1024,
+  "module.backbone.0.body.body.layer3.10.conv3.1.bias": 1024,
+  "module.backbone.0.body.body.layer3.10.se.fc1.weight": 32768,
+  "module.backbone.0.body.body.layer3.10.se.fc1.bias": 128,
+  "module.backbone.0.body.body.layer3.10.se.fc2.weight": 32768,
+  "module.backbone.0.body.body.layer3.10.se.fc2.bias": 256,
+  "module.backbone.0.body.body.layer3.11.conv1.0.weight": 262144,
+  "module.backbone.0.body.body.layer3.11.conv1.1.weight": 256,
+  "module.backbone.0.body.body.layer3.11.conv1.1.bias": 256,
+  "module.backbone.0.body.body.layer3.11.conv2.0.weight": 589824,
+  "module.backbone.0.body.body.layer3.11.conv2.1.weight": 256,
+  "module.backbone.0.body.body.layer3.11.conv2.1.bias": 256,
+  "module.backbone.0.body.body.layer3.11.conv3.0.weight": 262144,
+  "module.backbone.0.body.body.layer3.11.conv3.1.weight": 1024,
+  "module.backbone.0.body.body.layer3.11.conv3.1.bias": 1024,
+  "module.backbone.0.body.body.layer3.11.se.fc1.weight": 32768,
+  "module.backbone.0.body.body.layer3.11.se.fc1.bias": 128,
+  "module.backbone.0.body.body.layer3.11.se.fc2.weight": 32768,
+  "module.backbone.0.body.body.layer3.11.se.fc2.bias": 256,
+  "module.backbone.0.body.body.layer3.12.conv1.0.weight": 262144,
+  "module.backbone.0.body.body.layer3.12.conv1.1.weight": 256,
+  "module.backbone.0.body.body.layer3.12.conv1.1.bias": 256,
+  "module.backbone.0.body.body.layer3.12.conv2.0.weight": 589824,
+  "module.backbone.0.body.body.layer3.12.conv2.1.weight": 256,
+  "module.backbone.0.body.body.layer3.12.conv2.1.bias": 256,
+  "module.backbone.0.body.body.layer3.12.conv3.0.weight": 262144,
+  "module.backbone.0.body.body.layer3.12.conv3.1.weight": 1024,
+  "module.backbone.0.body.body.layer3.12.conv3.1.bias": 1024,
+  "module.backbone.0.body.body.layer3.12.se.fc1.weight": 32768,
+  "module.backbone.0.body.body.layer3.12.se.fc1.bias": 128,
+  "module.backbone.0.body.body.layer3.12.se.fc2.weight": 32768,
+  "module.backbone.0.body.body.layer3.12.se.fc2.bias": 256,
+  "module.backbone.0.body.body.layer3.13.conv1.0.weight": 262144,
+  "module.backbone.0.body.body.layer3.13.conv1.1.weight": 256,
+  "module.backbone.0.body.body.layer3.13.conv1.1.bias": 256,
+  "module.backbone.0.body.body.layer3.13.conv2.0.weight": 589824,
+  "module.backbone.0.body.body.layer3.13.conv2.1.weight": 256,
+  "module.backbone.0.body.body.layer3.13.conv2.1.bias": 256,
+  "module.backbone.0.body.body.layer3.13.conv3.0.weight": 262144,
+  "module.backbone.0.body.body.layer3.13.conv3.1.weight": 1024,
+  "module.backbone.0.body.body.layer3.13.conv3.1.bias": 1024,
+  "module.backbone.0.body.body.layer3.13.se.fc1.weight": 32768,
+  "module.backbone.0.body.body.layer3.13.se.fc1.bias": 128,
+  "module.backbone.0.body.body.layer3.13.se.fc2.weight": 32768,
+  "module.backbone.0.body.body.layer3.13.se.fc2.bias": 256,
+  "module.backbone.0.body.body.layer3.14.conv1.0.weight": 262144,
+  "module.backbone.0.body.body.layer3.14.conv1.1.weight": 256,
+  "module.backbone.0.body.body.layer3.14.conv1.1.bias": 256,
+  "module.backbone.0.body.body.layer3.14.conv2.0.weight": 589824,
+  "module.backbone.0.body.body.layer3.14.conv2.1.weight": 256,
+  "module.backbone.0.body.body.layer3.14.conv2.1.bias": 256,
+  "module.backbone.0.body.body.layer3.14.conv3.0.weight": 262144,
+  "module.backbone.0.body.body.layer3.14.conv3.1.weight": 1024,
+  "module.backbone.0.body.body.layer3.14.conv3.1.bias": 1024,
+  "module.backbone.0.body.body.layer3.14.se.fc1.weight": 32768,
+  "module.backbone.0.body.body.layer3.14.se.fc1.bias": 128,
+  "module.backbone.0.body.body.layer3.14.se.fc2.weight": 32768,
+  "module.backbone.0.body.body.layer3.14.se.fc2.bias": 256,
+  "module.backbone.0.body.body.layer3.15.conv1.0.weight": 262144,
+  "module.backbone.0.body.body.layer3.15.conv1.1.weight": 256,
+  "module.backbone.0.body.body.layer3.15.conv1.1.bias": 256,
+  "module.backbone.0.body.body.layer3.15.conv2.0.weight": 589824,
+  "module.backbone.0.body.body.layer3.15.conv2.1.weight": 256,
+  "module.backbone.0.body.body.layer3.15.conv2.1.bias": 256,
+  "module.backbone.0.body.body.layer3.15.conv3.0.weight": 262144,
+  "module.backbone.0.body.body.layer3.15.conv3.1.weight": 1024,
+  "module.backbone.0.body.body.layer3.15.conv3.1.bias": 1024,
+  "module.backbone.0.body.body.layer3.15.se.fc1.weight": 32768,
+  "module.backbone.0.body.body.layer3.15.se.fc1.bias": 128,
+  "module.backbone.0.body.body.layer3.15.se.fc2.weight": 32768,
+  "module.backbone.0.body.body.layer3.15.se.fc2.bias": 256,
+  "module.backbone.0.body.body.layer3.16.conv1.0.weight": 262144,
+  "module.backbone.0.body.body.layer3.16.conv1.1.weight": 256,
+  "module.backbone.0.body.body.layer3.16.conv1.1.bias": 256,
+  "module.backbone.0.body.body.layer3.16.conv2.0.weight": 589824,
+  "module.backbone.0.body.body.layer3.16.conv2.1.weight": 256,
+  "module.backbone.0.body.body.layer3.16.conv2.1.bias": 256,
+  "module.backbone.0.body.body.layer3.16.conv3.0.weight": 262144,
+  "module.backbone.0.body.body.layer3.16.conv3.1.weight": 1024,
+  "module.backbone.0.body.body.layer3.16.conv3.1.bias": 1024,
+  "module.backbone.0.body.body.layer3.16.se.fc1.weight": 32768,
+  "module.backbone.0.body.body.layer3.16.se.fc1.bias": 128,
+  "module.backbone.0.body.body.layer3.16.se.fc2.weight": 32768,
+  "module.backbone.0.body.body.layer3.16.se.fc2.bias": 256,
+  "module.backbone.0.body.body.layer3.17.conv1.0.weight": 262144,
+  "module.backbone.0.body.body.layer3.17.conv1.1.weight": 256,
+  "module.backbone.0.body.body.layer3.17.conv1.1.bias": 256,
+  "module.backbone.0.body.body.layer3.17.conv2.0.weight": 589824,
+  "module.backbone.0.body.body.layer3.17.conv2.1.weight": 256,
+  "module.backbone.0.body.body.layer3.17.conv2.1.bias": 256,
+  "module.backbone.0.body.body.layer3.17.conv3.0.weight": 262144,
+  "module.backbone.0.body.body.layer3.17.conv3.1.weight": 1024,
+  "module.backbone.0.body.body.layer3.17.conv3.1.bias": 1024,
+  "module.backbone.0.body.body.layer3.17.se.fc1.weight": 32768,
+  "module.backbone.0.body.body.layer3.17.se.fc1.bias": 128,
+  "module.backbone.0.body.body.layer3.17.se.fc2.weight": 32768,
+  "module.backbone.0.body.body.layer3.17.se.fc2.bias": 256,
+  "module.backbone.0.body.body.layer3.18.conv1.0.weight": 262144,
+  "module.backbone.0.body.body.layer3.18.conv1.1.weight": 256,
+  "module.backbone.0.body.body.layer3.18.conv1.1.bias": 256,
+  "module.backbone.0.body.body.layer3.18.conv2.0.weight": 589824,
+  "module.backbone.0.body.body.layer3.18.conv2.1.weight": 256,
+  "module.backbone.0.body.body.layer3.18.conv2.1.bias": 256,
+  "module.backbone.0.body.body.layer3.18.conv3.0.weight": 262144,
+  "module.backbone.0.body.body.layer3.18.conv3.1.weight": 1024,
+  "module.backbone.0.body.body.layer3.18.conv3.1.bias": 1024,
+  "module.backbone.0.body.body.layer3.18.se.fc1.weight": 32768,
+  "module.backbone.0.body.body.layer3.18.se.fc1.bias": 128,
+  "module.backbone.0.body.body.layer3.18.se.fc2.weight": 32768,
+  "module.backbone.0.body.body.layer3.18.se.fc2.bias": 256,
+  "module.backbone.0.body.body.layer3.19.conv1.0.weight": 262144,
+  "module.backbone.0.body.body.layer3.19.conv1.1.weight": 256,
+  "module.backbone.0.body.body.layer3.19.conv1.1.bias": 256,
+  "module.backbone.0.body.body.layer3.19.conv2.0.weight": 589824,
+  "module.backbone.0.body.body.layer3.19.conv2.1.weight": 256,
+  "module.backbone.0.body.body.layer3.19.conv2.1.bias": 256,
+  "module.backbone.0.body.body.layer3.19.conv3.0.weight": 262144,
+  "module.backbone.0.body.body.layer3.19.conv3.1.weight": 1024,
+  "module.backbone.0.body.body.layer3.19.conv3.1.bias": 1024,
+  "module.backbone.0.body.body.layer3.19.se.fc1.weight": 32768,
+  "module.backbone.0.body.body.layer3.19.se.fc1.bias": 128,
+  "module.backbone.0.body.body.layer3.19.se.fc2.weight": 32768,
+  "module.backbone.0.body.body.layer3.19.se.fc2.bias": 256,
+  "module.backbone.0.body.body.layer3.20.conv1.0.weight": 262144,
+  "module.backbone.0.body.body.layer3.20.conv1.1.weight": 256,
+  "module.backbone.0.body.body.layer3.20.conv1.1.bias": 256,
+  "module.backbone.0.body.body.layer3.20.conv2.0.weight": 589824,
+  "module.backbone.0.body.body.layer3.20.conv2.1.weight": 256,
+  "module.backbone.0.body.body.layer3.20.conv2.1.bias": 256,
+  "module.backbone.0.body.body.layer3.20.conv3.0.weight": 262144,
+  "module.backbone.0.body.body.layer3.20.conv3.1.weight": 1024,
+  "module.backbone.0.body.body.layer3.20.conv3.1.bias": 1024,
+  "module.backbone.0.body.body.layer3.20.se.fc1.weight": 32768,
+  "module.backbone.0.body.body.layer3.20.se.fc1.bias": 128,
+  "module.backbone.0.body.body.layer3.20.se.fc2.weight": 32768,
+  "module.backbone.0.body.body.layer3.20.se.fc2.bias": 256,
+  "module.backbone.0.body.body.layer3.21.conv1.0.weight": 262144,
+  "module.backbone.0.body.body.layer3.21.conv1.1.weight": 256,
+  "module.backbone.0.body.body.layer3.21.conv1.1.bias": 256,
+  "module.backbone.0.body.body.layer3.21.conv2.0.weight": 589824,
+  "module.backbone.0.body.body.layer3.21.conv2.1.weight": 256,
+  "module.backbone.0.body.body.layer3.21.conv2.1.bias": 256,
+  "module.backbone.0.body.body.layer3.21.conv3.0.weight": 262144,
+  "module.backbone.0.body.body.layer3.21.conv3.1.weight": 1024,
+  "module.backbone.0.body.body.layer3.21.conv3.1.bias": 1024,
+  "module.backbone.0.body.body.layer3.21.se.fc1.weight": 32768,
+  "module.backbone.0.body.body.layer3.21.se.fc1.bias": 128,
+  "module.backbone.0.body.body.layer3.21.se.fc2.weight": 32768,
+  "module.backbone.0.body.body.layer3.21.se.fc2.bias": 256,
+  "module.backbone.0.body.body.layer3.22.conv1.0.weight": 262144,
+  "module.backbone.0.body.body.layer3.22.conv1.1.weight": 256,
+  "module.backbone.0.body.body.layer3.22.conv1.1.bias": 256,
+  "module.backbone.0.body.body.layer3.22.conv2.0.weight": 589824,
+  "module.backbone.0.body.body.layer3.22.conv2.1.weight": 256,
+  "module.backbone.0.body.body.layer3.22.conv2.1.bias": 256,
+  "module.backbone.0.body.body.layer3.22.conv3.0.weight": 262144,
+  "module.backbone.0.body.body.layer3.22.conv3.1.weight": 1024,
+  "module.backbone.0.body.body.layer3.22.conv3.1.bias": 1024,
+  "module.backbone.0.body.body.layer3.22.se.fc1.weight": 32768,
+  "module.backbone.0.body.body.layer3.22.se.fc1.bias": 128,
+  "module.backbone.0.body.body.layer3.22.se.fc2.weight": 32768,
+  "module.backbone.0.body.body.layer3.22.se.fc2.bias": 256,
+  "module.backbone.0.body.body.layer4.0.conv1.0.weight": 524288,
+  "module.backbone.0.body.body.layer4.0.conv1.1.weight": 512,
+  "module.backbone.0.body.body.layer4.0.conv1.1.bias": 512,
+  "module.backbone.0.body.body.layer4.0.conv2.0.0.weight": 2359296,
+  "module.backbone.0.body.body.layer4.0.conv2.0.1.weight": 512,
+  "module.backbone.0.body.body.layer4.0.conv2.0.1.bias": 512,
+  "module.backbone.0.body.body.layer4.0.conv3.0.weight": 1048576,
+  "module.backbone.0.body.body.layer4.0.conv3.1.weight": 2048,
+  "module.backbone.0.body.body.layer4.0.conv3.1.bias": 2048,
+  "module.backbone.0.body.body.layer4.0.downsample.1.0.weight": 2097152,
+  "module.backbone.0.body.body.layer4.0.downsample.1.1.weight": 2048,
+  "module.backbone.0.body.body.layer4.0.downsample.1.1.bias": 2048,
+  "module.backbone.0.body.body.layer4.1.conv1.0.weight": 1048576,
+  "module.backbone.0.body.body.layer4.1.conv1.1.weight": 512,
+  "module.backbone.0.body.body.layer4.1.conv1.1.bias": 512,
+  "module.backbone.0.body.body.layer4.1.conv2.0.weight": 2359296,
+  "module.backbone.0.body.body.layer4.1.conv2.1.weight": 512,
+  "module.backbone.0.body.body.layer4.1.conv2.1.bias": 512,
+  "module.backbone.0.body.body.layer4.1.conv3.0.weight": 1048576,
+  "module.backbone.0.body.body.layer4.1.conv3.1.weight": 2048,
+  "module.backbone.0.body.body.layer4.1.conv3.1.bias": 2048,
+  "module.backbone.0.body.body.layer4.2.conv1.0.weight": 1048576,
+  "module.backbone.0.body.body.layer4.2.conv1.1.weight": 512,
+  "module.backbone.0.body.body.layer4.2.conv1.1.bias": 512,
+  "module.backbone.0.body.body.layer4.2.conv2.0.weight": 2359296,
+  "module.backbone.0.body.body.layer4.2.conv2.1.weight": 512,
+  "module.backbone.0.body.body.layer4.2.conv2.1.bias": 512,
+  "module.backbone.0.body.body.layer4.2.conv3.0.weight": 1048576,
+  "module.backbone.0.body.body.layer4.2.conv3.1.weight": 2048,
+  "module.backbone.0.body.body.layer4.2.conv3.1.bias": 2048,
+  "module.transformer.encoder.layers.0.self_attn.in_proj_weight": 12582912,
+  "module.transformer.encoder.layers.0.self_attn.in_proj_bias": 6144,
+  "module.transformer.encoder.layers.0.self_attn.out_proj.weight": 4194304,
+  "module.transformer.encoder.layers.0.self_attn.out_proj.bias": 2048,
+  "module.transformer.encoder.layers.0.linear1.weight": 4194304,
+  "module.transformer.encoder.layers.0.linear1.bias": 2048,
+  "module.transformer.encoder.layers.0.linear2.weight": 4194304,
+  "module.transformer.encoder.layers.0.linear2.bias": 2048,
+  "module.transformer.encoder.layers.0.norm1.weight": 2048,
+  "module.transformer.encoder.layers.0.norm1.bias": 2048,
+  "module.transformer.encoder.layers.0.norm2.weight": 2048,
+  "module.transformer.encoder.layers.0.norm2.bias": 2048,
+  "module.transformer.decoder.layers.0.multihead_attn.in_proj_weight": 12582912,
+  "module.transformer.decoder.layers.0.multihead_attn.in_proj_bias": 6144,
+  "module.transformer.decoder.layers.0.multihead_attn.out_proj.weight": 4194304,
+  "module.transformer.decoder.layers.0.multihead_attn.out_proj.bias": 2048,
+  "module.transformer.decoder.layers.0.linear1.weight": 4194304,
+  "module.transformer.decoder.layers.0.linear1.bias": 2048,
+  "module.transformer.decoder.layers.0.linear2.weight": 4194304,
+  "module.transformer.decoder.layers.0.linear2.bias": 2048,
+  "module.transformer.decoder.layers.0.norm2.weight": 2048,
+  "module.transformer.decoder.layers.0.norm2.bias": 2048,
+  "module.transformer.decoder.layers.0.norm3.weight": 2048,
+  "module.transformer.decoder.layers.0.norm3.bias": 2048,
+  "module.transformer.decoder.layers.1.multihead_attn.in_proj_weight": 12582912,
+  "module.transformer.decoder.layers.1.multihead_attn.in_proj_bias": 6144,
+  "module.transformer.decoder.layers.1.multihead_attn.out_proj.weight": 4194304,
+  "module.transformer.decoder.layers.1.multihead_attn.out_proj.bias": 2048,
+  "module.transformer.decoder.layers.1.linear1.weight": 4194304,
+  "module.transformer.decoder.layers.1.linear1.bias": 2048,
+  "module.transformer.decoder.layers.1.linear2.weight": 4194304,
+  "module.transformer.decoder.layers.1.linear2.bias": 2048,
+  "module.transformer.decoder.layers.1.norm2.weight": 2048,
+  "module.transformer.decoder.layers.1.norm2.bias": 2048,
+  "module.transformer.decoder.layers.1.norm3.weight": 2048,
+  "module.transformer.decoder.layers.1.norm3.bias": 2048,
+  "module.transformer.decoder.norm.weight": 2048,
+  "module.transformer.decoder.norm.bias": 2048,
+  "module.query_embed.weight": 163840,
+  "module.fc.W": 163840,
+  "module.fc.b": 80
+}
+[08/13 13:05:56.914]: lr: 0.0001
+[08/13 13:06:23.808]: lr:4.000000000000002e-06
+[08/13 13:06:33.536]: Epoch: [0/80][  0/739]  T 9.724 (9.724)  DT 2.745 (2.745)  S1 2.9 (2.9)  SA 11.5 (11.5)  LR 4.000e-06  Loss 739.735 (739.735)  Mem 10611
+[08/13 13:10:21.391]: Epoch: [0/80][400/739]  T 0.567 (0.592)  DT 0.000 (0.007)  S1 49.4 (47.3)  SA 197.5 (189.0)  LR 4.272e-06  Loss 89.211 (159.201)  Mem 11067
+[08/13 13:13:32.120]: Test: [  0/362]  Time 2.858 (2.858)  Loss 54.560 (54.560)  Mem 11067
+[08/13 13:14:27.797]: => synchronize...
+[08/13 13:15:07.795]:   mAP: 70.97842926396326
+[08/13 13:15:10.254]: Test: [  0/362]  Time 2.437 (2.437)  Loss 461.088 (461.088)  Mem 11067
+[08/13 13:16:03.233]: => synchronize...
+[08/13 13:16:46.794]:   mAP: 13.736736645491415
+[08/13 13:16:46.811]: => Test Epoch: [ 0/80]  ETA 13:40:37  TT 0:10:23 (0:10:23)  Loss 53.527  mAP 70.97843  Loss_ema 465.045  mAP_ema 13.73674
+[08/13 13:16:46.819]: 0 | Set best mAP 70.97842926396326 in ep 0
+[08/13 13:16:46.819]:    | best regular mAP 70.97842926396326 in ep 0
+[08/13 13:16:50.877]: lr:4.922462064600291e-06
+[08/13 13:16:53.947]: Epoch: [1/80][  0/739]  T 3.062 (3.062)  DT 2.519 (2.519)  S1 9.1 (9.1)  SA 36.6 (36.6)  LR 4.925e-06  Loss 57.579 (57.579)  Mem 11067
+[08/13 13:20:37.464]: Epoch: [1/80][400/739]  T 0.590 (0.565)  DT 0.001 (0.007)  S1 47.5 (49.6)  SA 189.8 (198.2)  LR 6.185e-06  Loss 62.231 (54.827)  Mem 11067
+[08/13 13:23:46.710]: Test: [  0/362]  Time 2.837 (2.837)  Loss 38.467 (38.467)  Mem 11067
+[08/13 13:24:46.428]: => synchronize...
+[08/13 13:25:22.743]:   mAP: 81.51412063411124
+[08/13 13:25:25.930]: Test: [  0/362]  Time 3.166 (3.166)  Loss 274.319 (274.319)  Mem 11067
+[08/13 13:26:24.907]: => synchronize...
+[08/13 13:27:04.579]:   mAP: 51.06049816343067
+[08/13 13:27:04.595]: => Test Epoch: [ 1/80]  ETA 13:26:40  TT 0:10:17 (0:20:41)  Loss 39.600  mAP 81.51412  Loss_ema 280.576  mAP_ema 51.06050
+[08/13 13:27:04.607]: 1 | Set best mAP 81.51412063411124 in ep 1
+[08/13 13:27:04.607]:    | best regular mAP 81.51412063411124 in ep 1
+[08/13 13:27:18.770]: lr:7.65439258087504e-06
+[08/13 13:27:21.898]: Epoch: [2/80][  0/739]  T 3.124 (3.124)  DT 2.607 (2.607)  S1 9.0 (9.0)  SA 35.9 (35.9)  LR 7.659e-06  Loss 54.313 (54.313)  Mem 11067
+[08/13 13:31:03.966]: Epoch: [2/80][400/739]  T 0.557 (0.562)  DT 0.000 (0.007)  S1 50.3 (49.9)  SA 201.2 (199.4)  LR 9.860e-06  Loss 36.859 (45.426)  Mem 11067
+[08/13 13:34:21.291]: Test: [  0/362]  Time 3.048 (3.048)  Loss 34.069 (34.069)  Mem 11067
+[08/13 13:35:15.306]: => synchronize...
+[08/13 13:35:54.948]:   mAP: 84.27520690957306
+[08/13 13:35:58.224]: Test: [  0/362]  Time 3.254 (3.254)  Loss 153.626 (153.626)  Mem 11067
+[08/13 13:36:55.193]: => synchronize...
+[08/13 13:37:29.443]:   mAP: 68.7991839050629
+[08/13 13:37:29.459]: => Test Epoch: [ 2/80]  ETA 13:18:11  TT 0:10:24 (0:31:05)  Loss 35.943  mAP 84.27521  Loss_ema 160.415  mAP_ema 68.79918
+[08/13 13:37:29.468]: 2 | Set best mAP 84.27520690957306 in ep 2
+[08/13 13:37:29.469]:    | best regular mAP 84.27520690957306 in ep 2
+[08/13 13:37:43.301]: lr:1.2090787287808122e-05
+[08/13 13:37:46.119]: Epoch: [3/80][  0/739]  T 2.814 (2.814)  DT 2.233 (2.233)  S1 10.0 (10.0)  SA 39.8 (39.8)  LR 1.210e-05  Loss 44.135 (44.135)  Mem 11067
+[08/13 13:41:34.039]: Epoch: [3/80][400/739]  T 0.537 (0.575)  DT 0.000 (0.006)  S1 52.2 (48.7)  SA 208.7 (194.7)  LR 1.515e-05  Loss 43.871 (42.438)  Mem 11067
+[08/13 13:44:46.206]: Test: [  0/362]  Time 3.287 (3.287)  Loss 34.365 (34.365)  Mem 11067
+[08/13 13:45:41.410]: => synchronize...
+[08/13 13:46:21.000]:   mAP: 85.57251313601427
+[08/13 13:46:24.095]: Test: [  0/362]  Time 3.074 (3.074)  Loss 86.818 (86.818)  Mem 11067
+[08/13 13:47:19.015]: => synchronize...
+[08/13 13:47:58.704]:   mAP: 75.98301310810018
+[08/13 13:47:58.715]: => Test Epoch: [ 3/80]  ETA 13:10:08  TT 0:10:29 (0:41:35)  Loss 34.570  mAP 85.57251  Loss_ema 92.123  mAP_ema 75.98301
+[08/13 13:47:58.727]: 3 | Set best mAP 85.57251313601427 in ep 3
+[08/13 13:47:58.727]:    | best regular mAP 85.57251313601427 in ep 3
+[08/13 13:48:12.462]: lr:1.806112927620205e-05
+[08/13 13:48:15.636]: Epoch: [4/80][  0/739]  T 3.170 (3.170)  DT 2.621 (2.621)  S1 8.8 (8.8)  SA 35.3 (35.3)  LR 1.807e-05  Loss 32.523 (32.523)  Mem 11067
+[08/13 13:51:59.435]: Epoch: [4/80][400/739]  T 0.558 (0.566)  DT 0.001 (0.007)  S1 50.2 (49.5)  SA 200.8 (197.9)  LR 2.186e-05  Loss 36.739 (39.338)  Mem 11067
+[08/13 13:55:11.585]: Test: [  0/362]  Time 3.147 (3.147)  Loss 35.133 (35.133)  Mem 11067
+[08/13 13:56:07.198]: => synchronize...
+[08/13 13:56:46.041]:   mAP: 86.83510359266299
+[08/13 13:56:49.833]: Test: [  0/362]  Time 3.769 (3.769)  Loss 55.614 (55.614)  Mem 11067
+[08/13 13:57:47.917]: => synchronize...
+[08/13 13:58:26.702]:   mAP: 80.1078594715131
+[08/13 13:58:26.718]: => Test Epoch: [ 4/80]  ETA 13:00:47  TT 0:10:28 (0:52:03)  Loss 33.241  mAP 86.83510  Loss_ema 59.072  mAP_ema 80.10786
+[08/13 13:58:26.730]: 4 | Set best mAP 86.83510359266299 in ep 4
+[08/13 13:58:26.730]:    | best regular mAP 86.83510359266299 in ep 4
+[08/13 13:58:40.619]: lr:2.533594296284919e-05
+[08/13 13:58:43.878]: Epoch: [5/80][  0/739]  T 3.254 (3.254)  DT 2.637 (2.637)  S1 8.6 (8.6)  SA 34.4 (34.4)  LR 2.535e-05  Loss 40.841 (40.841)  Mem 11067
+[08/13 14:02:26.999]: Epoch: [5/80][400/739]  T 0.588 (0.565)  DT 0.000 (0.007)  S1 47.6 (49.6)  SA 190.5 (198.4)  LR 2.973e-05  Loss 38.479 (37.656)  Mem 11067
+[08/13 14:05:42.737]: Test: [  0/362]  Time 3.501 (3.501)  Loss 32.794 (32.794)  Mem 11067
+[08/13 14:06:37.324]: => synchronize...
+[08/13 14:07:16.915]:   mAP: 87.39980367787662
+[08/13 14:07:20.564]: Test: [  0/362]  Time 3.638 (3.638)  Loss 42.345 (42.345)  Mem 11067
+[08/13 14:08:16.670]: => synchronize...
+[08/13 14:08:56.482]:   mAP: 82.80283034797067
+[08/13 14:08:56.498]: => Test Epoch: [ 5/80]  ETA 12:51:26  TT 0:10:29 (1:02:32)  Loss 32.893  mAP 87.39980  Loss_ema 44.418  mAP_ema 82.80283
+[08/13 14:08:56.510]: 5 | Set best mAP 87.39980367787662 in ep 5
+[08/13 14:08:56.510]:    | best regular mAP 87.39980367787662 in ep 5
+[08/13 14:09:09.888]: lr:3.363561419554258e-05
+[08/13 14:09:12.831]: Epoch: [6/80][  0/739]  T 2.938 (2.938)  DT 2.368 (2.368)  S1 9.5 (9.5)  SA 38.1 (38.1)  LR 3.365e-05  Loss 25.809 (25.809)  Mem 11067
+[08/13 14:12:57.705]: Epoch: [6/80][400/739]  T 0.566 (0.568)  DT 0.000 (0.006)  S1 49.5 (49.3)  SA 197.9 (197.1)  LR 3.846e-05  Loss 20.419 (36.392)  Mem 11067
+[08/13 14:16:12.012]: Test: [  0/362]  Time 3.218 (3.218)  Loss 34.292 (34.292)  Mem 11067
+[08/13 14:17:05.982]: => synchronize...
+[08/13 14:17:47.060]:   mAP: 87.60862301568501
+[08/13 14:17:50.881]: Test: [  0/362]  Time 3.800 (3.800)  Loss 36.034 (36.034)  Mem 11067
+[08/13 14:18:47.285]: => synchronize...
+[08/13 14:19:26.437]:   mAP: 84.70113268368945
+[08/13 14:19:26.455]: => Test Epoch: [ 6/80]  ETA 12:41:47  TT 0:10:29 (1:13:02)  Loss 32.586  mAP 87.60862  Loss_ema 37.768  mAP_ema 84.70113
+[08/13 14:19:26.467]: 6 | Set best mAP 87.60862301568501 in ep 6
+[08/13 14:19:26.467]:    | best regular mAP 87.60862301568501 in ep 6
+[08/13 14:19:39.999]: lr:4.264113748008163e-05
+[08/13 14:19:43.329]: Epoch: [7/80][  0/739]  T 3.325 (3.325)  DT 2.805 (2.805)  S1 8.4 (8.4)  SA 33.7 (33.7)  LR 4.265e-05  Loss 34.878 (34.878)  Mem 11067
+[08/13 14:23:27.302]: Epoch: [7/80][400/739]  T 0.561 (0.567)  DT 0.000 (0.007)  S1 49.9 (49.4)  SA 199.5 (197.6)  LR 4.770e-05  Loss 23.874 (34.403)  Mem 11067
+[08/13 14:26:42.789]: Test: [  0/362]  Time 3.369 (3.369)  Loss 34.844 (34.844)  Mem 11067
+[08/13 14:27:34.367]: => synchronize...
+[08/13 14:28:25.970]:   mAP: 87.87712688205741
+[08/13 14:28:29.584]: Test: [  0/362]  Time 3.593 (3.593)  Loss 32.688 (32.688)  Mem 11067
+[08/13 14:29:23.415]: => synchronize...
+[08/13 14:30:13.231]:   mAP: 86.06759252716681
+[08/13 14:30:13.249]: => Test Epoch: [ 7/80]  ETA 12:34:27  TT 0:10:46 (1:23:49)  Loss 32.581  mAP 87.87713  Loss_ema 34.492  mAP_ema 86.06759
+[08/13 14:30:13.261]: 7 | Set best mAP 87.87712688205741 in ep 7
+[08/13 14:30:13.261]:    | best regular mAP 87.87712688205741 in ep 7
+[08/13 14:30:26.779]: lr:5.200637724972209e-05
+[08/13 14:30:29.981]: Epoch: [8/80][  0/739]  T 3.196 (3.196)  DT 2.586 (2.586)  S1 8.8 (8.8)  SA 35.0 (35.0)  LR 5.202e-05  Loss 44.873 (44.873)  Mem 11067
+[08/13 14:34:22.185]: Epoch: [8/80][400/739]  T 0.555 (0.587)  DT 0.001 (0.007)  S1 50.4 (47.7)  SA 201.7 (190.8)  LR 5.711e-05  Loss 41.619 (33.708)  Mem 11067
+[08/13 14:37:42.869]: Test: [  0/362]  Time 3.794 (3.794)  Loss 37.110 (37.110)  Mem 11067
+[08/13 14:38:36.604]: => synchronize...
+[08/13 14:39:19.091]:   mAP: 87.92769831938725
+[08/13 14:39:23.213]: Test: [  0/362]  Time 4.098 (4.098)  Loss 31.132 (31.132)  Mem 11067
+[08/13 14:40:22.614]: => synchronize...
+[08/13 14:41:01.872]:   mAP: 87.05313113452301
+[08/13 14:41:01.889]: => Test Epoch: [ 8/80]  ETA 12:26:35  TT 0:10:48 (1:34:38)  Loss 32.914  mAP 87.92770  Loss_ema 32.731  mAP_ema 87.05313
+[08/13 14:41:01.902]: 8 | Set best mAP 87.92769831938725 in ep 8
+[08/13 14:41:01.902]:    | best regular mAP 87.92769831938725 in ep 8
+[08/13 14:41:16.590]: lr:6.137137190390653e-05
+[08/13 14:41:20.210]: Epoch: [9/80][  0/739]  T 3.614 (3.614)  DT 2.906 (2.906)  S1 7.7 (7.7)  SA 31.0 (31.0)  LR 6.138e-05  Loss 29.230 (29.230)  Mem 11067
+[08/13 14:45:16.842]: Epoch: [9/80][400/739]  T 0.559 (0.599)  DT 0.000 (0.008)  S1 50.1 (46.7)  SA 200.3 (186.9)  LR 6.632e-05  Loss 35.188 (32.550)  Mem 11067
+[08/13 14:48:35.715]: Test: [  0/362]  Time 3.931 (3.931)  Loss 36.094 (36.094)  Mem 11067
+[08/13 14:49:32.633]: => synchronize...
+[08/13 14:50:13.648]:   mAP: 88.00766784684654
+[08/13 14:50:17.178]: Test: [  0/362]  Time 3.509 (3.509)  Loss 30.920 (30.920)  Mem 11067
+[08/13 14:51:17.667]: => synchronize...
+[08/13 14:52:07.076]:   mAP: 87.75706315921323
+[08/13 14:52:07.093]: => Test Epoch: [ 9/80]  ETA 12:20:04  TT 0:11:05 (1:45:43)  Loss 33.078  mAP 88.00767  Loss_ema 31.828  mAP_ema 87.75706
+[08/13 14:52:07.107]: 9 | Set best mAP 88.00766784684654 in ep 9
+[08/13 14:52:07.107]:    | best regular mAP 88.00766784684654 in ep 9
+[08/13 14:52:21.733]: lr:7.037616926331534e-05
+[08/13 14:52:25.616]: Epoch: [10/80][  0/739]  T 3.879 (3.879)  DT 3.287 (3.287)  S1 7.2 (7.2)  SA 28.9 (28.9)  LR 7.039e-05  Loss 30.229 (30.229)  Mem 11067
+[08/13 14:56:15.777]: Epoch: [10/80][400/739]  T 0.570 (0.584)  DT 0.000 (0.009)  S1 49.1 (48.0)  SA 196.5 (191.9)  LR 7.499e-05  Loss 47.192 (31.342)  Mem 11067
+[08/13 14:59:32.695]: Test: [  0/362]  Time 3.671 (3.671)  Loss 38.263 (38.263)  Mem 11067
+[08/13 15:00:33.948]: => synchronize...
+[08/13 15:01:18.033]:   mAP: 87.95186972041404
+[08/13 15:01:22.316]: Test: [  0/362]  Time 4.260 (4.260)  Loss 31.310 (31.310)  Mem 11067
+[08/13 15:02:24.763]: => synchronize...
+[08/13 15:03:07.320]:   mAP: 88.2505440393481
+[08/13 15:03:07.337]: => Test Epoch: [10/80]  ETA 12:12:12  TT 0:11:00 (1:56:43)  Loss 33.647  mAP 87.95187  Loss_ema 31.401  mAP_ema 88.25054
+[08/13 15:03:07.349]: 10 | Set best mAP 88.2505440393481 in ep 10
+[08/13 15:03:07.349]:    | best regular mAP 88.00766784684654 in ep 9
+[08/13 15:03:22.106]: lr:7.867466166280405e-05
+[08/13 15:03:25.390]: Epoch: [11/80][  0/739]  T 3.279 (3.279)  DT 2.643 (2.643)  S1 8.5 (8.5)  SA 34.2 (34.2)  LR 7.869e-05  Loss 29.233 (29.233)  Mem 11067
+[08/13 15:07:13.446]: Epoch: [11/80][400/739]  T 0.571 (0.577)  DT 0.001 (0.007)  S1 49.1 (48.5)  SA 196.3 (194.1)  LR 8.277e-05  Loss 24.198 (30.603)  Mem 11067
+[08/13 15:10:34.932]: Test: [  0/362]  Time 4.175 (4.175)  Loss 38.332 (38.332)  Mem 11067
+[08/13 15:11:30.969]: => synchronize...
+[08/13 15:12:13.775]:   mAP: 87.83613539685669
+[08/13 15:12:16.605]: Test: [  0/362]  Time 2.808 (2.808)  Loss 31.936 (31.936)  Mem 11067
+[08/13 15:13:09.831]: => synchronize...
+[08/13 15:13:52.548]:   mAP: 88.59665590146128
+[08/13 15:13:52.565]: => Test Epoch: [11/80]  ETA 12:02:24  TT 0:10:45 (2:07:29)  Loss 34.641  mAP 87.83614  Loss_ema 31.269  mAP_ema 88.59666
+[08/13 15:13:52.577]: 11 | Set best mAP 88.59665590146128 in ep 11
+[08/13 15:13:52.577]:    | best regular mAP 88.00766784684654 in ep 9
+[08/13 15:14:06.898]: lr:8.594788891771012e-05
+[08/13 15:14:10.273]: Epoch: [12/80][  0/739]  T 3.371 (3.371)  DT 2.710 (2.710)  S1 8.3 (8.3)  SA 33.2 (33.2)  LR 8.596e-05  Loss 18.476 (18.476)  Mem 11067
+[08/13 15:18:11.839]: Epoch: [12/80][400/739]  T 0.546 (0.611)  DT 0.000 (0.007)  S1 51.3 (45.8)  SA 205.2 (183.4)  LR 8.936e-05  Loss 30.337 (30.553)  Mem 11067
+[08/13 15:21:31.330]: Test: [  0/362]  Time 3.116 (3.116)  Loss 38.734 (38.734)  Mem 11067
+[08/13 15:22:24.928]: => synchronize...
+[08/13 15:23:15.607]:   mAP: 87.69859656769043
+[08/13 15:23:19.223]: Test: [  0/362]  Time 3.599 (3.599)  Loss 33.046 (33.046)  Mem 11067
+[08/13 15:24:11.266]: => synchronize...
+[08/13 15:24:55.428]:   mAP: 88.82829873165284
+[08/13 15:24:55.435]: => Test Epoch: [12/80]  ETA 11:53:58  TT 0:11:02 (2:18:31)  Loss 34.806  mAP 87.69860  Loss_ema 31.346  mAP_ema 88.82830
+[08/13 15:24:55.448]: 12 | Set best mAP 88.82829873165284 in ep 12
+[08/13 15:24:55.448]:    | best regular mAP 88.00766784684654 in ep 9
+[08/13 15:25:10.233]: lr:9.191629785178897e-05
+[08/13 15:25:13.399]: Epoch: [13/80][  0/739]  T 3.161 (3.161)  DT 2.503 (2.503)  S1 8.9 (8.9)  SA 35.4 (35.4)  LR 9.192e-05  Loss 35.697 (35.697)  Mem 11067
+[08/13 15:28:57.615]: Epoch: [13/80][400/739]  T 0.529 (0.567)  DT 0.000 (0.007)  S1 53.0 (49.4)  SA 211.8 (197.5)  LR 9.453e-05  Loss 21.125 (28.817)  Mem 11067
+[08/13 15:32:10.523]: Test: [  0/362]  Time 3.747 (3.747)  Loss 38.488 (38.488)  Mem 11067
+[08/13 15:33:02.608]: => synchronize...
+[08/13 15:33:51.194]:   mAP: 87.63863950649605
+[08/13 15:33:54.492]: Test: [  0/362]  Time 3.276 (3.276)  Loss 34.379 (34.379)  Mem 11067
+[08/13 15:34:49.353]: => synchronize...
+[08/13 15:35:44.887]:   mAP: 88.97738418004892
+[08/13 15:35:44.904]: => Test Epoch: [13/80]  ETA 11:44:06  TT 0:10:49 (2:29:21)  Loss 35.707  mAP 87.63864  Loss_ema 31.628  mAP_ema 88.97738
+[08/13 15:35:44.917]: 13 | Set best mAP 88.97738418004892 in ep 13
+[08/13 15:35:44.917]:    | best regular mAP 88.00766784684654 in ep 9
+[08/13 15:35:59.333]: lr:9.63504871805528e-05
+[08/13 15:36:02.668]: Epoch: [14/80][  0/739]  T 3.330 (3.330)  DT 2.693 (2.693)  S1 8.4 (8.4)  SA 33.6 (33.6)  LR 9.636e-05  Loss 46.298 (46.298)  Mem 11067
+[08/13 15:39:51.446]: Epoch: [14/80][400/739]  T 0.528 (0.579)  DT 0.000 (0.007)  S1 53.0 (48.4)  SA 212.0 (193.5)  LR 9.805e-05  Loss 17.160 (28.394)  Mem 11067
+[08/13 15:43:18.937]: Test: [  0/362]  Time 3.464 (3.464)  Loss 42.106 (42.106)  Mem 11067
+[08/13 15:44:13.002]: => synchronize...
+[08/13 15:45:06.825]:   mAP: 87.40918774015141
+[08/13 15:45:10.020]: Test: [  0/362]  Time 3.174 (3.174)  Loss 35.767 (35.767)  Mem 11067
+[08/13 15:46:02.316]: => synchronize...
+[08/13 15:46:55.198]:   mAP: 89.07849970908573
+[08/13 15:46:55.215]: => Test Epoch: [14/80]  ETA 11:35:37  TT 0:11:10 (2:40:31)  Loss 36.390  mAP 87.40919  Loss_ema 32.124  mAP_ema 89.07850
+[08/13 15:46:55.226]: 14 | Set best mAP 89.07849970908573 in ep 14
+[08/13 15:46:55.226]:    | best regular mAP 88.00766784684654 in ep 9
+[08/13 15:47:09.916]: lr:9.908002476054155e-05
+[08/13 15:47:13.200]: Epoch: [15/80][  0/739]  T 3.278 (3.278)  DT 2.685 (2.685)  S1 8.5 (8.5)  SA 34.2 (34.2)  LR 9.908e-05  Loss 17.833 (17.833)  Mem 11067
+[08/13 15:51:13.969]: Epoch: [15/80][400/739]  T 0.602 (0.609)  DT 0.000 (0.007)  S1 46.5 (46.0)  SA 186.2 (184.0)  LR 9.981e-05  Loss 31.222 (27.370)  Mem 11067
+[08/13 15:54:32.174]: Test: [  0/362]  Time 3.457 (3.457)  Loss 43.601 (43.601)  Mem 11067
+[08/13 15:55:22.872]: => synchronize...
+[08/13 15:56:12.936]:   mAP: 87.21857410040455
+[08/13 15:56:16.543]: Test: [  0/362]  Time 3.584 (3.584)  Loss 37.244 (37.244)  Mem 11067
+[08/13 15:57:10.065]: => synchronize...
+[08/13 15:57:57.181]:   mAP: 89.15181243891632
+[08/13 15:57:57.198]: => Test Epoch: [15/80]  ETA 11:26:14  TT 0:11:01 (2:51:33)  Loss 36.390  mAP 87.21857  Loss_ema 32.905  mAP_ema 89.15181
+[08/13 15:57:57.210]: 15 | Set best mAP 89.15181243891632 in ep 15
+[08/13 15:57:57.210]:    | best regular mAP 88.00766784684654 in ep 9
+[08/13 15:58:11.739]: lr:9.999999988969653e-05
+[08/13 15:58:15.165]: Epoch: [16/80][  0/739]  T 3.421 (3.421)  DT 2.857 (2.857)  S1 8.2 (8.2)  SA 32.7 (32.7)  LR 1.000e-04  Loss 24.496 (24.496)  Mem 11067
+[08/13 16:01:58.455]: Epoch: [16/80][400/739]  T 0.550 (0.565)  DT 0.000 (0.007)  S1 50.9 (49.5)  SA 203.6 (198.1)  LR 9.998e-05  Loss 29.471 (26.294)  Mem 11067
+[08/13 16:05:14.483]: Test: [  0/362]  Time 3.588 (3.588)  Loss 43.931 (43.931)  Mem 11067
+[08/13 16:06:05.857]: => synchronize...
+[08/13 16:06:57.071]:   mAP: 87.27901721835765
+[08/13 16:07:00.471]: Test: [  0/362]  Time 3.379 (3.379)  Loss 39.005 (39.005)  Mem 11067
+[08/13 16:07:49.798]: => synchronize...
+[08/13 16:08:35.132]:   mAP: 89.19221538514799
+[08/13 16:08:35.150]: => Test Epoch: [16/80]  ETA 11:15:11  TT 0:10:37 (3:02:11)  Loss 37.459  mAP 87.27902  Loss_ema 33.901  mAP_ema 89.19222
+[08/13 16:08:35.161]: 16 | Set best mAP 89.19221538514799 in ep 16
+[08/13 16:08:35.162]:    | best regular mAP 88.00766784684654 in ep 9
+[08/13 16:08:50.053]: lr:9.99396099779254e-05
+[08/13 16:08:53.632]: Epoch: [17/80][  0/739]  T 3.570 (3.570)  DT 2.983 (2.983)  S1 7.8 (7.8)  SA 31.4 (31.4)  LR 9.994e-05  Loss 22.605 (22.605)  Mem 11067
+[08/13 16:12:38.988]: Epoch: [17/80][400/739]  T 0.579 (0.571)  DT 0.000 (0.008)  S1 48.4 (49.0)  SA 193.6 (196.2)  LR 9.986e-05  Loss 33.583 (26.191)  Mem 11067
+[08/13 16:15:58.897]: Test: [  0/362]  Time 2.783 (2.783)  Loss 45.040 (45.040)  Mem 11067
+[08/13 16:16:50.360]: => synchronize...
+[08/13 16:17:35.546]:   mAP: 86.98549614217279
+[08/13 16:17:38.483]: Test: [  0/362]  Time 2.914 (2.914)  Loss 40.218 (40.218)  Mem 11067
+[08/13 16:18:35.929]: => synchronize...
+[08/13 16:19:15.282]:   mAP: 89.20098034540798
+[08/13 16:19:15.300]: => Test Epoch: [17/80]  ETA 11:04:18  TT 0:10:40 (3:12:51)  Loss 39.170  mAP 86.98550  Loss_ema 34.993  mAP_ema 89.20098
+[08/13 16:19:15.310]: 17 | Set best mAP 89.20098034540798 in ep 17
+[08/13 16:19:15.310]:    | best regular mAP 88.00766784684654 in ep 9
+[08/13 16:19:30.716]: lr:9.975891165334173e-05
+[08/13 16:19:33.736]: Epoch: [18/80][  0/739]  T 3.015 (3.015)  DT 2.400 (2.400)  S1 9.3 (9.3)  SA 37.1 (37.1)  LR 9.976e-05  Loss 22.407 (22.407)  Mem 11067
+[08/13 16:23:16.185]: Epoch: [18/80][400/739]  T 0.581 (0.562)  DT 0.000 (0.006)  S1 48.2 (49.8)  SA 192.8 (199.2)  LR 9.961e-05  Loss 22.927 (25.532)  Mem 11067
+[08/13 16:26:26.426]: Test: [  0/362]  Time 2.931 (2.931)  Loss 45.850 (45.850)  Mem 11067
+[08/13 16:27:24.113]: => synchronize...
+[08/13 16:28:02.710]:   mAP: 86.78497161259949
+[08/13 16:28:05.259]: Test: [  0/362]  Time 2.532 (2.532)  Loss 41.885 (41.885)  Mem 11067
+[08/13 16:29:02.591]: => synchronize...
+[08/13 16:29:43.054]:   mAP: 89.19522817440945
+[08/13 16:29:43.064]: => Test Epoch: [18/80]  ETA 10:52:46  TT 0:10:27 (3:23:19)  Loss 38.643  mAP 86.78497  Loss_ema 36.050  mAP_ema 89.19523
+[08/13 16:29:43.075]: 18 | Set best mAP 89.20098034540798 in ep 17
+[08/13 16:29:43.076]:    | best regular mAP 88.00766784684654 in ep 9
+[08/13 16:29:43.129]: lr:9.945834023403678e-05
+[08/13 16:29:47.816]: Epoch: [19/80][  0/739]  T 4.682 (4.682)  DT 3.253 (3.253)  S1 6.0 (6.0)  SA 23.9 (23.9)  LR 9.946e-05  Loss 14.803 (14.803)  Mem 11067
+[08/13 16:33:28.637]: Epoch: [19/80][400/739]  T 0.557 (0.562)  DT 0.000 (0.009)  S1 50.3 (49.8)  SA 201.0 (199.2)  LR 9.925e-05  Loss 22.105 (24.886)  Mem 11067
+[08/13 16:36:38.603]: Test: [  0/362]  Time 3.179 (3.179)  Loss 51.063 (51.063)  Mem 11067
+[08/13 16:37:35.309]: => synchronize...
+[08/13 16:38:14.274]:   mAP: 86.61656107967588
+[08/13 16:38:17.640]: Test: [  0/362]  Time 3.344 (3.344)  Loss 43.189 (43.189)  Mem 11067
+[08/13 16:39:11.696]: => synchronize...
+[08/13 16:39:50.377]:   mAP: 89.14730409530401
+[08/13 16:39:50.394]: => Test Epoch: [19/80]  ETA 10:40:20  TT 0:10:07 (3:33:26)  Loss 39.879  mAP 86.61656  Loss_ema 37.137  mAP_ema 89.14730
+[08/13 16:39:50.405]: 19 | Set best mAP 89.20098034540798 in ep 17
+[08/13 16:39:50.405]:    | best regular mAP 88.00766784684654 in ep 9
+[08/13 16:39:50.458]: lr:9.903861982288658e-05
+[08/13 16:39:55.121]: Epoch: [20/80][  0/739]  T 4.658 (4.658)  DT 3.210 (3.210)  S1 6.0 (6.0)  SA 24.0 (24.0)  LR 9.904e-05  Loss 22.432 (22.432)  Mem 11067
+[08/13 16:43:40.498]: Epoch: [20/80][400/739]  T 0.539 (0.574)  DT 0.000 (0.008)  S1 52.0 (48.8)  SA 208.0 (195.2)  LR 9.876e-05  Loss 15.406 (23.829)  Mem 11067
+[08/13 16:47:02.391]: Test: [  0/362]  Time 3.178 (3.178)  Loss 51.553 (51.553)  Mem 11067
+[08/13 16:47:57.363]: => synchronize...
+[08/13 16:48:37.096]:   mAP: 86.7697149176151
+[08/13 16:48:40.683]: Test: [  0/362]  Time 3.565 (3.565)  Loss 44.936 (44.936)  Mem 11067
+[08/13 16:49:40.610]: => synchronize...
+[08/13 16:50:22.288]:   mAP: 89.0900224911712
+[08/13 16:50:22.305]: => Test Epoch: [20/80]  ETA 10:29:16  TT 0:10:31 (3:43:58)  Loss 40.888  mAP 86.76971  Loss_ema 38.120  mAP_ema 89.09002
+[08/13 16:50:22.317]: 20 | Set best mAP 89.20098034540798 in ep 17
+[08/13 16:50:22.317]:    | best regular mAP 88.00766784684654 in ep 9
+[08/13 16:50:22.371]: lr:9.850076156312476e-05
+[08/13 16:50:27.250]: Epoch: [21/80][  0/739]  T 4.875 (4.875)  DT 2.851 (2.851)  S1 5.7 (5.7)  SA 23.0 (23.0)  LR 9.850e-05  Loss 13.834 (13.834)  Mem 11067
+[08/13 16:54:10.692]: Epoch: [21/80][400/739]  T 0.542 (0.569)  DT 0.000 (0.008)  S1 51.7 (49.2)  SA 206.6 (196.7)  LR 9.816e-05  Loss 19.689 (22.939)  Mem 11067
+[08/13 16:57:21.287]: Test: [  0/362]  Time 3.587 (3.587)  Loss 45.362 (45.362)  Mem 11067
+[08/13 16:58:18.665]: => synchronize...
+[08/13 16:58:57.791]:   mAP: 86.3470153379917
+[08/13 16:59:00.686]: Test: [  0/362]  Time 2.874 (2.874)  Loss 46.282 (46.282)  Mem 11067
+[08/13 16:59:54.632]: => synchronize...
+[08/13 17:00:40.435]:   mAP: 89.04780185034433
+[08/13 17:00:40.452]: => Test Epoch: [21/80]  ETA 10:17:39  TT 0:10:18 (3:54:16)  Loss 42.373  mAP 86.34702  Loss_ema 38.945  mAP_ema 89.04780
+[08/13 17:00:40.463]: 21 | Set best mAP 89.20098034540798 in ep 17
+[08/13 17:00:40.463]:    | best regular mAP 88.00766784684654 in ep 9
+[08/13 17:00:40.517]: lr:9.78460612024099e-05
+[08/13 17:00:45.537]: Epoch: [22/80][  0/739]  T 5.015 (5.015)  DT 3.452 (3.452)  S1 5.6 (5.6)  SA 22.3 (22.3)  LR 9.785e-05  Loss 11.815 (11.815)  Mem 11067
+[08/13 17:04:30.193]: Epoch: [22/80][400/739]  T 0.546 (0.573)  DT 0.000 (0.009)  S1 51.3 (48.9)  SA 205.1 (195.6)  LR 9.744e-05  Loss 15.738 (22.423)  Mem 11067
+[08/13 17:07:40.598]: Test: [  0/362]  Time 3.662 (3.662)  Loss 48.277 (48.277)  Mem 11067
+[08/13 17:08:35.970]: => synchronize...
+[08/13 17:09:14.930]:   mAP: 86.14213423836752
+[08/13 17:09:18.560]: Test: [  0/362]  Time 3.597 (3.597)  Loss 47.006 (47.006)  Mem 11067
+[08/13 17:10:13.331]: => synchronize...
+[08/13 17:10:54.394]:   mAP: 88.99779422222309
+[08/13 17:10:54.411]: => Test Epoch: [22/80]  ETA 10:05:58  TT 0:10:13 (4:04:30)  Loss 43.769  mAP 86.14213  Loss_ema 39.794  mAP_ema 88.99779
+[08/13 17:10:54.422]: 22 | Set best mAP 89.20098034540798 in ep 17
+[08/13 17:10:54.422]:    | best regular mAP 88.00766784684654 in ep 9
+[08/13 17:10:54.478]: lr:9.707609597125594e-05
+[08/13 17:10:59.224]: Epoch: [23/80][  0/739]  T 4.741 (4.741)  DT 2.899 (2.899)  S1 5.9 (5.9)  SA 23.6 (23.6)  LR 9.707e-05  Loss 42.222 (42.222)  Mem 11067
+[08/13 17:14:51.055]: Epoch: [23/80][400/739]  T 0.574 (0.590)  DT 0.000 (0.008)  S1 48.8 (47.5)  SA 195.2 (189.8)  LR 9.661e-05  Loss 21.703 (21.467)  Mem 11067
+[08/13 17:18:04.795]: Test: [  0/362]  Time 3.064 (3.064)  Loss 52.909 (52.909)  Mem 11067
+[08/13 17:18:59.150]: => synchronize...
+[08/13 17:19:38.070]:   mAP: 85.97472128648778
+[08/13 17:19:41.276]: Test: [  0/362]  Time 3.186 (3.186)  Loss 47.101 (47.101)  Mem 11067
+[08/13 17:20:34.714]: => synchronize...
+[08/13 17:21:14.200]:   mAP: 88.92923800085985
+[08/13 17:21:14.217]: => Test Epoch: [23/80]  ETA 9:54:38  TT 0:10:19 (4:14:50)  Loss 44.678  mAP 85.97472  Loss_ema 40.397  mAP_ema 88.92924
+[08/13 17:21:14.228]: 23 | Set best mAP 89.20098034540798 in ep 17
+[08/13 17:21:14.228]:    | best regular mAP 88.00766784684654 in ep 9
+[08/13 17:21:14.282]: lr:9.619272078334576e-05
+[08/13 17:21:18.739]: Epoch: [24/80][  0/739]  T 4.454 (4.454)  DT 2.886 (2.886)  S1 6.3 (6.3)  SA 25.1 (25.1)  LR 9.619e-05  Loss 13.179 (13.179)  Mem 11067
+[08/13 17:25:04.721]: Epoch: [24/80][400/739]  T 0.585 (0.575)  DT 0.001 (0.008)  S1 47.8 (48.7)  SA 191.3 (194.9)  LR 9.567e-05  Loss 15.942 (21.676)  Mem 11067
+[08/13 17:28:16.100]: Test: [  0/362]  Time 3.243 (3.243)  Loss 53.814 (53.814)  Mem 11067
+[08/13 17:29:13.283]: => synchronize...
+[08/13 17:29:54.136]:   mAP: 85.88234948662013
+[08/13 17:29:57.178]: Test: [  0/362]  Time 3.021 (3.021)  Loss 47.192 (47.192)  Mem 11067
+[08/13 17:30:51.940]: => synchronize...
+[08/13 17:31:35.804]:   mAP: 88.88158269956197
+[08/13 17:31:35.821]: => Test Epoch: [24/80]  ETA 9:43:26  TT 0:10:21 (4:25:12)  Loss 45.621  mAP 85.88235  Loss_ema 40.889  mAP_ema 88.88158
+[08/13 17:31:35.833]: 24 | Set best mAP 89.20098034540798 in ep 17
+[08/13 17:31:35.833]:    | best regular mAP 88.00766784684654 in ep 9
+[08/13 17:31:35.888]: lr:9.519806376688151e-05
+[08/13 17:31:40.484]: Epoch: [25/80][  0/739]  T 4.591 (4.591)  DT 3.137 (3.137)  S1 6.1 (6.1)  SA 24.4 (24.4)  LR 9.520e-05  Loss 21.942 (21.942)  Mem 11067
+[08/13 17:35:23.965]: Epoch: [25/80][400/739]  T 0.540 (0.569)  DT 0.000 (0.008)  S1 51.8 (49.2)  SA 207.3 (196.9)  LR 9.461e-05  Loss 24.269 (20.838)  Mem 11067
+[08/13 17:38:36.508]: Test: [  0/362]  Time 3.658 (3.658)  Loss 55.761 (55.761)  Mem 11067
+[08/13 17:39:34.021]: => synchronize...
+[08/13 17:40:13.534]:   mAP: 85.81989021130798
+[08/13 17:40:17.127]: Test: [  0/362]  Time 3.572 (3.572)  Loss 48.222 (48.222)  Mem 11067
+[08/13 17:41:11.349]: => synchronize...
+[08/13 17:41:56.582]:   mAP: 88.82215803532509
+[08/13 17:41:56.599]: => Test Epoch: [25/80]  ETA 9:32:17  TT 0:10:20 (4:35:33)  Loss 45.466  mAP 85.81989  Loss_ema 41.388  mAP_ema 88.82216
+[08/13 17:41:56.610]: 25 | Set best mAP 89.20098034540798 in ep 17
+[08/13 17:41:56.610]:    | best regular mAP 88.00766784684654 in ep 9
+[08/13 17:41:56.663]: lr:9.409452113773755e-05
+[08/13 17:42:01.550]: Epoch: [26/80][  0/739]  T 4.882 (4.882)  DT 3.104 (3.104)  S1 5.7 (5.7)  SA 22.9 (22.9)  LR 9.409e-05  Loss 22.970 (22.970)  Mem 11067
