@@ -377,9 +377,10 @@ def init_distributed_and_seed(args):
     if args.seed is not None:
         rank = args.rank
         random.seed(args.seed+rank)
-        torch.manual_seed(args.seed+rank)
         np.random.seed(args.seed+rank)
-    
+        torch.manual_seed(args.seed+rank)
+        torch.cuda.manual_seed_all(args.seed+rank)
+
     torch.cuda.set_device(args.local_rank)
     print('| distributed init (local_rank {}): {}'.format(
         args.local_rank, args.dist_url), flush=True)
@@ -394,9 +395,9 @@ def init_distributed_and_seed(args):
     #     # print("Random Seed: {}".format(args.seed))
     #     rank = torch.distributed.get_rank()
     #     random.seed(args.seed+rank)
-    #     torch.manual_seed(args.seed+rank)
     #     np.random.seed(args.seed+rank)
-    #     # torch.cuda.manual_seed_all(args.seed+args)
+    #     torch.manual_seed(args.seed+rank)
+    #     torch.cuda.manual_seed_all(args.seed+rank)
 
 @torch.no_grad()
 def accuracy(output, target, topk=(1,)):
